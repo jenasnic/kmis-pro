@@ -1,0 +1,28 @@
+version: '3.6'
+
+services:
+
+  php:
+    image: kmis_pro_php
+    build: docker/php
+    volumes:
+      - .:/www
+
+  nginx:
+    image: nginx:1.19
+    volumes:
+      - ./docker/nginx/kmis-pro.conf:/etc/nginx/conf.d/kmis-pro.conf:ro
+      - ./public:/www/public
+    environment:
+      NGINX_HOST: local.kmis-pro
+
+  db:
+    image: mariadb:10.8.2
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+
+  node:
+    image: node:16-alpine
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
