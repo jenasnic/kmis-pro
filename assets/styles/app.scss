@@ -1,0 +1,23 @@
+@use 'front/default';
+
+@use '~aos/dist/aos';
+
+@use 'front/flex';
+@use 'front/icons';
+
+@use 'front/components/banner';
+@use 'front/components/button';
+@use 'front/components/flash';
+@use 'front/components/footer';
+@use 'front/components/form';
+@use 'front/components/grid';
+@use 'front/components/menu';
+@use 'front/components/section';
+@use 'front/components/tac';
+@use 'front/components/with-background';
+@use 'front/components/with-overlay';
+
+@use 'front/pages/basic';
+@use 'front/pages/contact';
+@use 'front/pages/error';
+@use 'front/pages/home';

@@ -1,0 +1,49 @@
+{% extends 'layout/_front.html.twig' %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block meta %}
+    <meta name="keywords" content="KMIS Pro, KMIS Pro, self-defense, sécurité, formation, Oise, Verneuil-en-Halatte" />
+    <meta name="description" content="@todo">
+    <meta name="og:title" property="og:title" content="Contactez-nous">
+{% endblock %}
+
+{% block header %}
+    {% include 'front/components/_banner.html.twig' with {
+        'image': asset('build/images/todo.webp'),
+        'title': ('front.contact.header.title'|trans),
+        'darkOverlay': true,
+    } only %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="section" itemscope itemtype="https://schema.org/Organization">
+        <h2 data-aos="zoom-out" data-aos-duration="1000">{{ 'front.contact.page.title'|trans }}</h2>
+        <p>Pour tout renseignement, vous pouvez nous contacter au <a href="tel:@todo" itemprop="telephone">@todo</a> ou nous laisser un message à l'aide du formulaire ci-dessous.</p>
+        <p>
+            Vous pouvez aussi nous retrouver :
+            <ul class="contact-locations">
+                <li>
+                    à <span itemprop="addressLocality">Verneuil-en-Halatte</span> sur rendez-vous
+                    <a itemscope itemtype="https://schema.org/GeoCoordinates" href="https://www.google.com/maps/search/@todo" target="_blank">
+                        <i class="icon-location"></i>
+                        <meta itemprop="latitude" content="@todo" />
+                        <meta itemprop="longitude" content="@todo" />
+                    </a>
+                </li>
+            </ul>
+        </p>
+        <div class="contact-form-wrapper">
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.message, {'attr': {'class': 'large'}}) }}
+            {{ form_row(form.captcha) }}
+            <div class="flex flex--content-end">
+                <button type="submit" class="button">{{ 'global.validate'|trans }} <i class="icon-checkmark"></i></button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}

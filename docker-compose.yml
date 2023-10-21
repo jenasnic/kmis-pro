@@ -22,7 +22,7 @@ services:
       MARIADB_ROOT_PASSWORD: root
 
   node:
-    image: node:16-alpine
+    image: node:18-alpine
     working_dir: /home/node/app
     volumes:
       - .:/home/node/app

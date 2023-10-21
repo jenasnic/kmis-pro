@@ -1,0 +1,23 @@
+{% extends 'layout/_front.html.twig' %}
+
+{% block title %}Politique de confidentialité{% endblock %}
+
+{% block header %}
+    {% include 'front/components/_banner.html.twig' with {
+        'image': asset('build/images/todo.webp'),
+        'title': 'Protection des données',
+        'darkOverlay': true,
+    } only %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="section privacy">
+
+        <h2 data-aos="zoom-out" data-aos-duration="1000">Politique de confidentialité</h2>
+
+        <p>@todo</p>
+
+    </div>
+
+{% endblock %}
