@@ -1,0 +1,3 @@
+form.errors.invalid_captcha: Captcha invalide
+This value should not be null.: Ce champ est obligatoire
+This value should not be blank.: Ce champ est obligatoire

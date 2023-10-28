@@ -1,0 +1,19 @@
+{% block subject %}[KMIS Pro] Demande de contact{% endblock %}
+
+{% block html %}
+Bonjour,<br/>
+<p>Votre demande de contact a bien été prise en compte.</p>
+<p>Cordialement</p>
+<p>KMIS Pro</p>
+<img src="{{ absolute_url(asset('build/images/sign.png')) }}" alt="KMIS Pro" style="width: 200px;" />
+{% endblock %}
+
+{% block text %}
+Bonjour,
+
+Votre demande de contact a bien été prise en compte.
+
+Cordialement,
+
+KMIS Pro
+{% endblock %}

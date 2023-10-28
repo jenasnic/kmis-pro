@@ -1,0 +1,5 @@
+framework:
+  http_client:
+    scoped_clients:
+      google_captcha.client:
+        base_uri: 'https://www.google.com/recaptcha/api/'

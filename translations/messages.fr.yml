@@ -7,6 +7,10 @@ global.error: Erreur
 global.login: Se connecter
 global.validate: Valider
 
+form.contact.email: Votre email
+form.contact.message: Message
+form.contact.success: Votre demande a bien été envoyée.
+
 front.coaching.header.title: Coaching
 front.contact.header.title: Contact
 front.contact.page.title: Contactez-nous
@@ -22,3 +26,4 @@ front.services.header.title: Services proposés
 login.password: Mot de passe
 login.title: Connexion
 login.username: Login
+

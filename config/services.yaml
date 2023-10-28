@@ -12,14 +12,26 @@ services:
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
 
+        bind:
+            $mailerSender: '%env(string:MAILER_SENDER)%'
+            $mailerContact: '%env(string:MAILER_CONTACT)%'
+            $googleCaptchaSiteKey: '%env(string:GOOGLE_CAPTCHA_SITE_KEY)%'
+            $googleCaptchaPrivateKey: '%env(string:GOOGLE_CAPTCHA_PRIVATE_KEY)%'
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:
         resource: '../src/'
         exclude:
             - '../src/DependencyInjection/'
+            - '../src/Domain/Command/**/*Command.php'
             - '../src/Entity/'
             - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Email\EmailBuilderFactory: ~
+
+    App\Service\Email\EmailBuilder:
+        factory: ['@App\Service\Email\EmailBuilderFactory', 'createEmailBuilder']
