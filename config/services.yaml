@@ -15,6 +15,7 @@ services:
         bind:
             $mailerSender: '%env(string:MAILER_SENDER)%'
             $mailerContact: '%env(string:MAILER_CONTACT)%'
+            $mailerQuote: '%env(string:MAILER_QUOTE)%'
             $googleCaptchaSiteKey: '%env(string:GOOGLE_CAPTCHA_SITE_KEY)%'
             $googleCaptchaPrivateKey: '%env(string:GOOGLE_CAPTCHA_PRIVATE_KEY)%'
             $mapboxToken: '%env(string:MAPBOX_TOKEN)%'

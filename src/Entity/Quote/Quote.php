@@ -2,10 +2,12 @@
 
 namespace App\Entity\Quote;
 
+use App\Enum\DurationEnum;
+use App\Repository\Quote\QuoteRepository;
 use App\ValueObject\Address;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: QuoteRepository::class)]
 class Quote
 {
     #[ORM\Id]
@@ -16,8 +18,8 @@ class Quote
     #[ORM\Column(type: 'datetime')]
     private \DateTime $date;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private string $duration;
+    #[ORM\Column(type: 'string', length: 55, nullable: true, enumType: DurationEnum::class)]
+    private ?DurationEnum $duration = null;
 
     #[ORM\Embedded(class: Address::class)]
     private ?Address $location = null;
@@ -39,7 +41,7 @@ class Quote
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $otherServiceType = null;
 
-    #[ORM\OneToOne(targetEntity: Contact::class)]
+    #[ORM\OneToOne(targetEntity: Contact::class, cascade: ['persist', 'remove'])]
     private ?Contact $contact = null;
 
     #[ORM\Column(type: 'text', nullable: true)]
@@ -62,12 +64,12 @@ class Quote
         return $this;
     }
 
-    public function getDuration(): string
+    public function getDuration(): ?DurationEnum
     {
         return $this->duration;
     }
 
-    public function setDuration(string $duration): self
+    public function setDuration(?DurationEnum $duration): self
     {
         $this->duration = $duration;
 

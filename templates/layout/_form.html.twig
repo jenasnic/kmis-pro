@@ -136,3 +136,20 @@
     {% endfor %}
   </ul>
 {% endblock %}
+
+{% block address_widget %}
+  <div data-localization>
+    {{ form_row(form.street) }}
+    <div class="row col-x2 col-sm-x1">
+      {{ form_row(form.zipCode) }}
+      {{ form_row(form.city) }}
+    </div>
+  </div>
+{% endblock %}
+
+{% block address_street_widget %}
+  <div class="localization-suggestion">
+    <div class="row col-x1">{{ form_widget(form) }}</div>
+    <div data-localization-wrapper></div>
+  </div>
+{% endblock %}

@@ -27,7 +27,7 @@ class ContactFormController extends AbstractController
             $contactForm->ip = $request->getClientIp();
             $contactFormHandler->handle($contactForm);
 
-            $this->addFlash('info', $translator->trans('form.contact.success'));
+            $this->addFlash('info', $translator->trans('front.contact.page.contact_form_success'));
 
             return $this->redirectToRoute('app_contact');
         }

@@ -1,0 +1,72 @@
+{% extends 'layout/_front.html.twig' %}
+
+{% block title %}Contactez-nous{% endblock %}
+
+{% block meta %}
+    <meta name="keywords" content="KMIS Pro, demande de devis" />
+    <meta name="description" content="@todo">
+    <meta name="og:title" property="og:title" content="Devis">
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block body %}
+
+    <div class="section">
+
+        <h2 data-aos="zoom-out" data-aos-duration="1000">{{ 'front.quote.page.title'|trans }}</h2>
+
+        {{ form_start(form, {'attr': {'class': 'quote-form'}}) }}
+
+        <div class="row col-x3 col-md-x2 col-sm-x1">
+            {{ form_row(form.date) }}
+            {{ form_row(form.duration) }}
+            {{ form_row(form.peopleCount) }}
+        </div>
+
+        <div class="row col-x2 col-sm-x1">
+            {{ form_row(form.organizationType, {'attr': {'data-field-update': 'other-organization-type'}}) }}
+            <div data-field-update-target="other-organization-type">
+                {% if form.otherOrganizationType is defined %}
+                    {{ form_row(form.otherOrganizationType) }}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row col-x2 col-sm-x1">
+            {{ form_row(form.serviceType, {'attr': {'data-field-update': 'other-service-type'}}) }}
+            <div data-field-update-target="other-service-type">
+                {% if form.otherServiceType is defined %}
+                    {{ form_row(form.otherServiceType) }}
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="fieldset m-top-1">
+            {{ form_row(form.location) }}
+        </div>
+
+        <div class="fieldset m-top-1">
+            <div class="row col-x3 col-md-x2 col-sm-x1">
+                {{ form_row(form.contact.gender) }}
+                {{ form_row(form.contact.firstName) }}
+                {{ form_row(form.contact.lastName) }}
+            </div>
+            <div class="row col-x2 col-sm-x1">
+                {{ form_row(form.contact.phone) }}
+                {{ form_row(form.contact.email) }}
+            </div>
+        </div>
+
+        {{ form_row(form.comment) }}
+        {{ form_row(form.captcha) }}
+
+        <div class="flex flex--content-end">
+            <button type="submit" class="button">{{ 'global.validate'|trans }} <i class="icon-checkmark"></i></button>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

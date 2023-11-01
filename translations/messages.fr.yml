@@ -7,16 +7,53 @@ global.error: Erreur
 global.login: Se connecter
 global.validate: Valider
 
-form.contact.email: Votre email
-form.contact.message: Message
-form.contact.success: Votre demande a bien été envoyée.
+enum.duration.TWO_HOURS: 2 heures
+enum.duration.HALF_DAY: 1/2 journée
+enum.duration.DAY: Journée
+enum.duration.OTHER: Autre
+
+enum.gender.MALE: M.
+enum.gender.FEMALE: Mme
+
+form.address.city: Ville
+form.address.street: Adresse
+form.address.zipCode: Code postal
+
+form.contact.email: Email
+form.contact.firstName: Prénom
+form.contact.gender: Civilité
+form.contact.lastName: Nom
+form.contact.phone: Téléphone
+
+form.contactForm.email: Votre email
+form.contactForm.message: Message
+form.contactForm.success: Votre demande a bien été envoyée.
+
+form.quote.comment: Commentaire
+form.quote.contact: Coordonnées
+form.quote.date: Date
+form.quote.duration: Durée
+form.quote.location: Lieu
+form.quote.organizationType: Type d'organisation
+form.quote.otherOrganizationType: Autre
+form.quote.otherServiceType: Autre
+form.quote.peopleCount: Nombre de participants
+form.quote.serviceType: Type de prestation
 
 front.coaching.header.title: Coaching
+
 front.contact.header.title: Contact
 front.contact.page.title: Contactez-nous
+front.contact.page.contact_form_success: Votre demande de devis a bien été prise en compte.
+
 front.footer.link.cookie: Gestion des cookies
 front.footer.link.google: Référencement Google gratuit
 front.footer.link.privacy: Protection des données
+
+front.quote.header.title: Devis
+front.quote.page.new_quote_success: Votre demande de devis a bien été prise en compte.
+front.quote.page.title: Demande de devis
+
 front.menu.item.coaching: Coaching
 front.menu.item.contact: Contact
 front.menu.item.home: Accueil

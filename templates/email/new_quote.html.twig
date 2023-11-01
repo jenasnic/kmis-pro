@@ -1,0 +1,13 @@
+{% block subject %}[KMIS Pro] Demande de devis{% endblock %}
+
+{% block html %}
+<p>Demande de devis de la part de {{ firstName }} {{ lastName }}</p>
+<p>KMIS Pro</p>
+<img src="{{ absolute_url(asset('build/images/sign.png')) }}" alt="KMIS Pro" style="width: 200px;" />
+{% endblock %}
+
+{% block text %}
+Demande de devis de la part de {{ firstName }} {{ lastName }}.
+
+KMIS Pro
+{% endblock %}
