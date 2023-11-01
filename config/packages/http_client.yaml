@@ -3,3 +3,5 @@ framework:
     scoped_clients:
       google_captcha.client:
         base_uri: 'https://www.google.com/recaptcha/api/'
+      mapbox.client:
+        base_uri: 'https://api.mapbox.com'

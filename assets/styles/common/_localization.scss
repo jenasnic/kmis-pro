@@ -1,0 +1,58 @@
+@use '../front/color';
+
+$item-background: color.$white;
+$item-separator-color: color.$silver;
+$radius: 4px;
+
+.localization-suggestion {
+  position: relative;
+}
+
+[data-localization-wrapper] {
+  display: none;
+
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 1;
+
+  background: color.$white;
+  margin-top: 4px;
+
+  border-radius: $radius;
+  box-shadow: 0 11px 14px 0 rgb(0 0 0 / 20%);
+
+  &.suggesting {
+    display: block;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1.1em;
+      padding: 1em 20px;
+
+      cursor: pointer;
+      transition: all .4s;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $item-separator-color;
+      }
+
+      &:first-child {
+        border-radius: $radius $radius 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 $radius $radius;
+      }
+
+      &:hover {
+        background-color: $item-background;
+      }
+    }
+  }
+}
