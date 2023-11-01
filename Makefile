@@ -4,6 +4,7 @@ USER_GROUP=$(shell id -g)
 DOCKER_ROOT=docker-compose run --rm
 DOCKER_USER=docker-compose run --rm -u $(USER_ID):$(USER_GROUP)
 PHP_CS_FIXER_CONFIGURATION_FILE=.php-cs-fixer.php
+PHPSTAN_CONFIGURATION_FILE=phpstan.neon
 
 SYMFONY_BIN=php ./bin/console
 COMPOSER_BIN=php composer
@@ -109,9 +110,9 @@ phpcs:
 	$(PHP_QA) php-cs-fixer fix --dry-run --format=txt --verbose --show-progress=dots --config=$(PHP_CS_FIXER_CONFIGURATION_FILE)
 
 .PHONY: phpcsfix
-phpcsfix:
+fixcs:
 	$(PHP_QA) php-cs-fixer fix --format=txt --verbose --show-progress=dots --config=$(PHP_CS_FIXER_CONFIGURATION_FILE)
 
 .PHONY: phpstan
 phpstan:
-	$(DOCKER_USER) $(PHPSTAN_BIN) analyse src --level=max
+	$(DOCKER_USER) $(PHPSTAN_BIN) analyse src --configuration=$(PHPSTAN_CONFIGURATION_FILE)

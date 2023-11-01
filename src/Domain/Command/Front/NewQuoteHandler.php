@@ -16,6 +16,7 @@ final class NewQuoteHandler
 
     public function handle(NewQuoteCommand $command): void
     {
+        // @todo: validate command!
         $this->quoteRepository->add($command->quote, true);
 
         $this->emailSender->send(
@@ -27,9 +28,11 @@ final class NewQuoteHandler
             ],
         );
 
+        /** @var string $contactEmail */
+        $contactEmail = $command->quote->getContact()?->getEmail();
         $this->emailSender->send(
             'email/quote_notification.html.twig',
-            $command->quote->getContact()?->getEmail(),
+            $contactEmail,
         );
     }
 }
