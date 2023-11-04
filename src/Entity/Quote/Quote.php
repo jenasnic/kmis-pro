@@ -27,19 +27,19 @@ class Quote
     #[ORM\Column(type: 'integer')]
     private int $peopleCount;
 
-    #[ORM\ManyToOne(targetEntity: OrganizationType::class)]
+    #[ORM\ManyToOne(targetEntity: Organization::class)]
     #[ORM\JoinColumn(nullable: true)]
-    private ?OrganizationType $organizationType = null;
+    private ?Organization $organization = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $otherOrganizationType = null;
+    private ?string $organizationNote = null;
 
-    #[ORM\ManyToOne(targetEntity: ServiceType::class)]
+    #[ORM\ManyToOne(targetEntity: Service::class)]
     #[ORM\JoinColumn(nullable: true)]
-    private ?ServiceType $serviceType = null;
+    private ?Service $service = null;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private ?string $otherServiceType = null;
+    private ?string $serviceNote = null;
 
     #[ORM\OneToOne(targetEntity: Contact::class, cascade: ['persist', 'remove'])]
     private ?Contact $contact = null;
@@ -100,50 +100,50 @@ class Quote
         return $this;
     }
 
-    public function getOrganizationType(): ?OrganizationType
+    public function getOrganization(): ?Organization
     {
-        return $this->organizationType;
+        return $this->organization;
     }
 
-    public function setOrganizationType(?OrganizationType $organizationType): self
+    public function setOrganization(?Organization $organization): self
     {
-        $this->organizationType = $organizationType;
+        $this->organization = $organization;
 
         return $this;
     }
 
-    public function getOtherOrganizationType(): ?string
+    public function getOrganizationNote(): ?string
     {
-        return $this->otherOrganizationType;
+        return $this->organizationNote;
     }
 
-    public function setOtherOrganizationType(?string $otherOrganizationType): self
+    public function setOrganizationNote(?string $organizationNote): self
     {
-        $this->otherOrganizationType = $otherOrganizationType;
+        $this->organizationNote = $organizationNote;
 
         return $this;
     }
 
-    public function getServiceType(): ?ServiceType
+    public function getService(): ?Service
     {
-        return $this->serviceType;
+        return $this->service;
     }
 
-    public function setServiceType(?ServiceType $serviceType): self
+    public function setService(?Service $service): self
     {
-        $this->serviceType = $serviceType;
+        $this->service = $service;
 
         return $this;
     }
 
-    public function getOtherServiceType(): ?string
+    public function getServiceNote(): ?string
     {
-        return $this->otherServiceType;
+        return $this->serviceNote;
     }
 
-    public function setOtherServiceType(?string $otherServiceType): self
+    public function setServiceNote(?string $serviceNote): self
     {
-        $this->otherServiceType = $otherServiceType;
+        $this->serviceNote = $serviceNote;
 
         return $this;
     }

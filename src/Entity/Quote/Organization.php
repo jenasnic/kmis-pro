@@ -2,12 +2,14 @@
 
 namespace App\Entity\Quote;
 
-use App\Repository\Quote\OrganizationTypeRepository;
+use App\Repository\Quote\OrganizationRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: OrganizationTypeRepository::class)]
-class OrganizationType
+#[ORM\Entity(repositoryClass: OrganizationRepository::class)]
+class Organization
 {
+    use WithNoteTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]

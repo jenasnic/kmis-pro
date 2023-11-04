@@ -2,16 +2,16 @@
 
 namespace App\Form\Quote;
 
-use App\Entity\Quote\OrganizationType;
+use App\Entity\Quote\Organization;
 use App\Entity\Quote\Quote;
-use App\Entity\Quote\ServiceType;
+use App\Entity\Quote\Service;
 use App\Enum\DurationEnum;
 use App\Form\Type\AddressType;
 use App\Form\Type\EnumType;
 use App\Form\Type\GoogleCaptchaType;
 use App\Form\Type\NumberType;
-use App\Repository\Quote\OrganizationTypeRepository;
-use App\Repository\Quote\ServiceTypeRepository;
+use App\Repository\Quote\OrganizationRepository;
+use App\Repository\Quote\ServiceRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -36,22 +36,22 @@ class QuoteType extends AbstractType
             ])
             ->add('comment', TextareaType::class)
             ->add('location', AddressType::class, ['label' => false])
-            ->add('organizationType', EntityType::class, [
-                'class' => OrganizationType::class,
+            ->add('organization', EntityType::class, [
+                'class' => Organization::class,
                 'choice_label' => 'label',
-                'query_builder' => function (OrganizationTypeRepository $organizationTypeRepository) {
-                    return $organizationTypeRepository->createQueryBuilder('organization_type')->orderBy('organization_type.rank');
+                'query_builder' => function (OrganizationRepository $organizationRepository) {
+                    return $organizationRepository->createQueryBuilder('organization')->orderBy('organization.rank');
                 },
             ])
-            ->add('otherOrganizationType', TextType::class)
-            ->add('serviceType', EntityType::class, [
-                'class' => ServiceType::class,
+            ->add('organizationNote', TextType::class)
+            ->add('service', EntityType::class, [
+                'class' => Service::class,
                 'choice_label' => 'label',
-                'query_builder' => function (ServiceTypeRepository $serviceTypeRepository) {
-                    return $serviceTypeRepository->createQueryBuilder('service_type')->orderBy('service_type.rank');
+                'query_builder' => function (ServiceRepository $serviceRepository) {
+                    return $serviceRepository->createQueryBuilder('service_type')->orderBy('service_type.rank');
                 },
             ])
-            ->add('otherServiceType', TextType::class)
+            ->add('serviceNote', TextType::class)
             ->add('contact', ContactType::class, ['label' => false])
             ->add('captcha', GoogleCaptchaType::class)
         ;

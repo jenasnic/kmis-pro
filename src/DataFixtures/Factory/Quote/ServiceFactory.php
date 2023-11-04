@@ -2,15 +2,15 @@
 
 namespace App\DataFixtures\Factory\Quote;
 
-use App\Entity\Quote\ServiceType;
+use App\Entity\Quote\Service;
 use Faker\Factory;
 use Faker\Generator;
 use Zenstruck\Foundry\ModelFactory;
 
 /**
- * @extends ModelFactory<ServiceType>
+ * @extends ModelFactory<Service>
  */
-final class ServiceTypeFactory extends ModelFactory
+final class ServiceFactory extends ModelFactory
 {
     private Generator $faker;
 
@@ -33,6 +33,6 @@ final class ServiceTypeFactory extends ModelFactory
 
     protected static function getClass(): string
     {
-        return ServiceType::class;
+        return Service::class;
     }
 }

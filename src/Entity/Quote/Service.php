@@ -2,12 +2,14 @@
 
 namespace App\Entity\Quote;
 
-use App\Repository\Quote\ServiceTypeRepository;
+use App\Repository\Quote\ServiceRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ServiceTypeRepository::class)]
-class ServiceType
+#[ORM\Entity(repositoryClass: ServiceRepository::class)]
+class Service
 {
+    use WithNoteTrait;
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]

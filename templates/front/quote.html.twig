@@ -25,19 +25,19 @@
         </div>
 
         <div class="row col-x2 col-sm-x1">
-            {{ form_row(form.organizationType, {'attr': {'data-field-update': 'other-organization-type'}}) }}
-            <div data-field-update-target="other-organization-type">
-                {% if form.otherOrganizationType is defined %}
-                    {{ form_row(form.otherOrganizationType) }}
+            {{ form_row(form.organization, {'attr': {'data-field-update': 'organization-note'}}) }}
+            <div data-field-update-target="organization-note">
+                {% if form.organizationNote is defined %}
+                    {{ form_row(form.organizationNote) }}
                 {% endif %}
             </div>
         </div>
 
         <div class="row col-x2 col-sm-x1">
-            {{ form_row(form.serviceType, {'attr': {'data-field-update': 'other-service-type'}}) }}
-            <div data-field-update-target="other-service-type">
-                {% if form.otherServiceType is defined %}
-                    {{ form_row(form.otherServiceType) }}
+            {{ form_row(form.service, {'attr': {'data-field-update': 'service-note'}}) }}
+            <div data-field-update-target="service-note">
+                {% if form.serviceNote is defined %}
+                    {{ form_row(form.serviceNote) }}
                 {% endif %}
             </div>
         </div>

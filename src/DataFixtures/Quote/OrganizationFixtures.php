@@ -2,29 +2,34 @@
 
 namespace App\DataFixtures\Quote;
 
-use App\DataFixtures\Factory\Quote\OrganizationTypeFactory;
+use App\DataFixtures\Factory\Quote\OrganizationFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class OrganizationTypeFixtures extends Fixture
+class OrganizationFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        OrganizationTypeFactory::createOne([
+        OrganizationFactory::createOne([
             'label' => 'Particulier',
             'rank' => 1,
         ]);
-        OrganizationTypeFactory::createOne([
+        OrganizationFactory::createOne([
             'label' => 'École',
             'rank' => 2,
         ]);
-        OrganizationTypeFactory::createOne([
+        OrganizationFactory::createOne([
             'label' => 'Entreprise',
             'rank' => 3,
         ]);
-        OrganizationTypeFactory::createOne([
+        OrganizationFactory::createOne([
             'label' => 'Administration',
             'rank' => 4,
+        ]);
+        OrganizationFactory::createOne([
+            'label' => 'Autre',
+            'rank' => 5,
+            'withNote' => true,
         ]);
     }
 }

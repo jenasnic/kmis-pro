@@ -2,21 +2,21 @@
 
 namespace App\Repository\Quote;
 
-use App\Entity\Quote\ServiceType;
+use App\Entity\Quote\Service;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ServiceType>
+ * @extends ServiceEntityRepository<Service>
  */
-class ServiceTypeRepository extends ServiceEntityRepository
+class ServiceRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ServiceType::class);
+        parent::__construct($registry, Service::class);
     }
 
-    public function add(ServiceType $entity, bool $flush = false): void
+    public function add(Service $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
 
@@ -25,7 +25,7 @@ class ServiceTypeRepository extends ServiceEntityRepository
         }
     }
 
-    public function remove(ServiceType $entity, bool $flush = false): void
+    public function remove(Service $entity, bool $flush = false): void
     {
         $this->getEntityManager()->remove($entity);
 

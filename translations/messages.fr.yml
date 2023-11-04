@@ -34,11 +34,11 @@ form.quote.contact: Coordonnées
 form.quote.date: Date
 form.quote.duration: Durée
 form.quote.location: Lieu
-form.quote.organizationType: Type d'organisation
-form.quote.otherOrganizationType: Autre
-form.quote.otherServiceType: Autre
+form.quote.organization: Type d'organisation
+form.quote.organizationNote: Précisez
 form.quote.peopleCount: Nombre de participants
-form.quote.serviceType: Type de prestation
+form.quote.service: Type de prestation
+form.quote.serviceNote: Précisez
 
 front.coaching.header.title: Coaching
 

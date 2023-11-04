@@ -2,15 +2,15 @@
 
 namespace App\DataFixtures\Factory\Quote;
 
-use App\Entity\Quote\OrganizationType;
+use App\Entity\Quote\Organization;
 use Faker\Factory;
 use Faker\Generator;
 use Zenstruck\Foundry\ModelFactory;
 
 /**
- * @extends ModelFactory<OrganizationType>
+ * @extends ModelFactory<Organization>
  */
-final class OrganizationTypeFactory extends ModelFactory
+final class OrganizationFactory extends ModelFactory
 {
     private Generator $faker;
 
@@ -33,6 +33,6 @@ final class OrganizationTypeFactory extends ModelFactory
 
     protected static function getClass(): string
     {
-        return OrganizationType::class;
+        return Organization::class;
     }
 }

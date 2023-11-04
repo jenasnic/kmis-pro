@@ -2,25 +2,30 @@
 
 namespace App\DataFixtures\Quote;
 
-use App\DataFixtures\Factory\Quote\ServiceTypeFactory;
+use App\DataFixtures\Factory\Quote\ServiceFactory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class ServiceTypeFixtures extends Fixture
+class ServiceFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        ServiceTypeFactory::createOne([
+        ServiceFactory::createOne([
             'label' => 'Harcèlement',
             'rank' => 1,
         ]);
-        ServiceTypeFactory::createOne([
+        ServiceFactory::createOne([
             'label' => 'Gestion du stress',
             'rank' => 2,
         ]);
-        ServiceTypeFactory::createOne([
+        ServiceFactory::createOne([
             'label' => 'Défense personnelle',
             'rank' => 3,
+        ]);
+        ServiceFactory::createOne([
+            'label' => 'Autre',
+            'rank' => 4,
+            'withNote' => true,
         ]);
     }
 }
