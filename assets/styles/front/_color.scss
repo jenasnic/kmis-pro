@@ -3,7 +3,7 @@ $black: #000000;
 $cornflower: #82C9E3;
 $gallery: #EDEDED;
 $medium-carmin: #BA3B3C;
-$mine-shaft: #222222;
+$mine-shaft: #333333;
 $orchid: #E382DA;
 $scorpion: #575757;
 $silverChalice: #A3A3A3;
@@ -16,7 +16,12 @@ $background-default-color: $white;
 $background-light-color: $gallery;
 $background-dark-color: $mine-shaft;
 
-$primary-color: $geebung;
+//$primary-color: $geebung;
+
+// >>> For help tool only
+$primary-color: var(--primary-color);
+$theme-color: var(--theme-color);
+// <<< For help tool only
 
 //TEXT
 $text-default-color: $mine-shaft;

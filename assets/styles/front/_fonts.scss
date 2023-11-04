@@ -27,4 +27,8 @@
 }
 
 $text-default-font: 'Roboto Condensed', sans-serif;
-$text-title-font: 'Teko', serif;
+//$text-title-font: 'Teko', serif;
+
+// >>> For help tool only
+$text-title-font: var(--font-title);
+// <<< For help tool only

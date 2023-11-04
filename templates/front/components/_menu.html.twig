@@ -1,6 +1,10 @@
 <nav id="menu-wrapper">
+    <div class="menu-logo">
+        <a href="{{ path('app_home') }}">
+            <img src="{{ asset('build/images/logo_title.svg') }}" alt="KMIS Pro"/>
+        </a>
+    </div>
     <div class="menu">
-        <a href="{{ path('app_home') }}"><span>{{ 'front.menu.item.home'|trans }}</span></a>
         <a href="{{ path('app_home') }}"><span>{{ 'front.menu.item.services'|trans }}</span></a>
         <a href="{{ path('app_home') }}"><span>{{ 'front.menu.item.coaching'|trans }}</span></a>
         <a href="{{ path('app_contact') }}"><span>{{ 'front.menu.item.contact'|trans }}</span></a>

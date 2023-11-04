@@ -1,3 +1,7 @@
+// >>> For help tool only
+import './help-tool';
+// <<< For help tool only
+
 import '../styles/app.scss';
 
 import './common/cookie';

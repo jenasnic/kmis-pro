@@ -3,28 +3,37 @@
 @use '../media';
 
 #menu-wrapper {
-  align-items: center;
+  align-items: stretch;
+  background-color: color.$theme-color;
   box-sizing: border-box;
   display: flex;
   font-size: 1rem;
   height: 70px;
-  justify-content: center;
-  padding: 10px 25px;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 11;
 
-  > .menu {
-    display: none;
-    font-size: 1.8em;
-    padding: 0 20px;
+  > .menu-logo {
+    margin-left: 5%;
 
-    @include media.above(sm) {
-      display: flex;
+    img {
+      height: 70px;
+      padding-top: 20px;
     }
+  }
+
+  > .menu {
+    align-items: stretch;
+    display: flex;
+    font-size: 1.5em;
+    gap: 2px;
+    margin-right: 10%;
 
     @include media.below(sm) {
+      display: none;
+
       &.active {
         align-items: center;
         background-color: rgba(color.$background-dark-color, 0.9);
@@ -43,29 +52,22 @@
     }
 
     > a {
+      align-items: center;
+      background-color: color.$primary-color;
+      display: flex;
       padding: 0 20px;
-      position: relative;
+      transition: 0.5s ease-out;
+      box-shadow: 0 0 3px color.$background-dark-color;
 
       > span, i {
-        color: color.$primary-color;
+        color: color.$text-default-color;
         display: block;
+        text-transform: uppercase;
+        font-weight: 700;
       }
 
       &:hover {
-        &:before {
-          bottom: 0;
-          box-shadow: 0 5px color.$primary-color;
-          box-sizing: border-box;
-          content: '';
-          height: 1px;
-          left: 20px;
-          position: absolute;
-          width: calc(100% - 40px);
-
-          @include media.below(sm) {
-            bottom: 10px;
-          }
-        }
+        transform: translateY(10px);
       }
 
       @include media.above(sm) {

@@ -30,6 +30,7 @@
         "list.js": "^2.3.1",
         "lodash": "^4.17.21",
         "sortablejs": "^1.15.0",
-        "tarteaucitronjs": "^1.14.0"
+        "tarteaucitronjs": "^1.14.0",
+        "vanilla-picker": "^2.12.2"
     }
 }
