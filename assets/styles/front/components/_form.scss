@@ -2,9 +2,8 @@
 @use '../icons';
 
 @mixin outline-style {
-  border: 1px solid color.$scorpion;
-  border-radius: 5px;
-  box-shadow: 2px 2px 5px -2px color.$scorpion;
+  border: 1px solid color.$silverChalice;
+  box-shadow: 0 0 5px color.$silverChalice;
 }
 
 @mixin box-style {
@@ -18,6 +17,16 @@
   width: 23px;
 }
 
+@mixin decorate-style {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid color.$silverChalice;
+  border-left: 2px solid color.$silverChalice;
+  z-index: 1;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -25,6 +34,7 @@
 
   > label {
     align-self: flex-start;
+    font-size: 1.2em;
     padding: 0 12px 5px 0;
     position: relative;
 
@@ -36,6 +46,82 @@
         right: 0;
         top: 0;
       }
+    }
+  }
+
+  &--with-errors {
+    label {
+      color: color.$error-color;
+    }
+
+    .input-wrapper, .select-wrapper, .textarea-wrapper {
+      &:before, &:after {
+        border-color: color.$error-color;
+      }
+    }
+
+    .select-wrapper > .select-icon > i {
+      color: color.$error-color;
+    }
+
+    .radio-wrapper {
+      input[type="checkbox"] + label, input[type="radio"] + label {
+        &:before {
+          border-color: color.$error-color;
+          box-shadow: 0 0 5px color.$error-color;
+        }
+      }
+    }
+
+    .captcha-wrapper .g-recaptcha {
+      border: 1px solid color.$error-color;
+      box-shadow: 0 0 5px color.$error-color;
+    }
+
+    input, select, textarea {
+      border-color: color.$error-color;
+      box-shadow: 0 0 5px color.$error-color;
+    }
+  }
+}
+
+.input-wrapper, .select-wrapper, .textarea-wrapper {
+  position: relative;
+
+  > input, select {
+    width: 100%;
+  }
+
+  &:before {
+    @include decorate-style();
+    top: 3px;
+    left: 3px;
+  }
+}
+
+.input-wrapper {
+  &:after {
+    @include decorate-style();
+    transform: rotate(180deg);
+    bottom: 3px;
+    right: 3px;
+  }
+}
+
+.select-wrapper {
+  > .select-icon {
+    background-color: color.$white;
+    pointer-events: none;
+    position: absolute;
+    right: 2px;
+    top: 7px;
+    transform: rotate(180deg);
+    z-index: 9;
+
+    i {
+      color: color.$silverChalice;
+      font-size: 1.5rem;
+      padding: 5px 7px;
     }
   }
 }
@@ -50,71 +136,6 @@
   }
 }
 
-.file {
-  display: flex;
-  width: 100%;
-
-  label.file-label {
-    @include outline-style;
-    align-items: center;
-    display: flex;
-    cursor: pointer;
-    flex-grow: 1;
-    justify-content: flex-start;
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
-
-    input[type="file"] {
-      cursor: pointer;
-      height: 100%;
-      left: 0;
-      opacity: 0;
-      outline: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    .file-cta {
-      align-items: center;
-      border-right: 1px solid color.$scorpion;
-      display: flex;
-      background-color: color.$background-light-color;
-      box-sizing: border-box;
-      padding: 5px 10px;
-
-      .file-icon {
-        font-size: 1.6rem;
-        opacity: 0.7;
-      }
-
-      .file-label {
-        padding: 5px 10px;
-      }
-    }
-
-    .file-name {
-      flex-grow: 1;
-      display: block;
-      overflow: hidden;
-      padding: 5px 10px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  }
-
-  .download {
-    font-size: 1.5rem;
-    margin-left: 20px;
-    padding: 10px;
-
-    i {
-      padding: 0
-    }
-  }
-}
-
 .captcha-wrapper {
   align-items: center;
   display: flex;
@@ -122,7 +143,7 @@
   justify-content: center;
 }
 
-.form-errors {
+ul.form-errors {
   > li {
     list-style: none;
     color: color.$error-color;
@@ -133,16 +154,33 @@
 input, textarea, select {
   @include outline-style;
   box-sizing: border-box;
+  font-size: 1.2em;
   padding: 10px 15px;
+  position: relative;
 
   &:focus-visible {
     outline: none;
   }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #333;
+    top: 0;
+    left: 0;
+  }
+}
+
+input[data-number-input] {
+  text-align: right;
 }
 
 textarea {
   min-height: 5rem;
   resize: vertical;
+  width: 100%;
 
   &.large {
     min-height: 20rem;
@@ -176,7 +214,7 @@ input[type="checkbox"]:checked + label {
     @include icons.icon(icons.$icon-checkmark);
     border: none;
     background: none;
-    color: color.$apple;
+    color: color.$primary-color;
     font-size: 1.5rem;
     opacity: 1;
   }
@@ -193,8 +231,8 @@ input[type="radio"]:checked + label {
 
 input[type="radio"]:checked + label {
   &:after {
-    background-color: color.$apple;
-    border-color: color.$apple;
+    background-color: color.$primary-color;
+    border-color: color.$primary-color;
     border-radius: 100%;
     opacity: 1;
     transform: scale(0.5);
@@ -213,10 +251,6 @@ select {
   }
 }
 
-.select > select {
-  width: 100%;
-}
-
 .help-text {
   color: color.$text-dark-color;
   font-style: italic;
@@ -224,18 +258,33 @@ select {
 }
 
 .fieldset {
-  border: 1px solid color.$scorpion;
-  border-radius: 5px;
+  background-color: color.$gallery;
+  box-shadow: 1px 1px 3px color.$silverChalice;
   margin-bottom: 20px;
   padding: 20px;
   position: relative;
 
-  > label {
+  &__title {
+    background-color: color.$gallery;
+    color: color.$silverChalice;
+    font-size: 1.4rem;
+    left: 0;
+    padding: 10px 50px;
     position: absolute;
-    background-color: color.$white;
-    left: 20px;
-    padding: 0 10px;
-    top: -11px;
+    top: -32px;
+
+    &:before {
+      @include decorate-style();
+      left: 6px;
+      top: 6px;
+    }
+
+    &:after {
+      @include decorate-style();
+      top: 6px;
+      transform: rotate(90deg);
+      right: 6px;
+    }
   }
 }
 

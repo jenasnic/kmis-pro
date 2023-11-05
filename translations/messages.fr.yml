@@ -29,14 +29,14 @@ form.contactForm.email: Votre email
 form.contactForm.message: Message
 form.contactForm.success: Votre demande a bien été envoyée.
 
-form.quote.comment: Commentaire
+form.quote.comment: Informations complémentaires
 form.quote.contact: Coordonnées
 form.quote.date: Date
 form.quote.duration: Durée
 form.quote.location: Lieu
 form.quote.organization: Type d'organisation
 form.quote.organizationNote: Précisez
-form.quote.peopleCount: Nombre de participants
+form.quote.peopleCount: Nb. participants
 form.quote.service: Type de prestation
 form.quote.serviceNote: Précisez
 

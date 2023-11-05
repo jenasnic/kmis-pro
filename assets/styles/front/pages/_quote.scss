@@ -1,0 +1,23 @@
+.quote-form {
+  .people-count .input-wrapper {
+    max-width: 125px;
+  }
+
+  .location-wrapper, .contact-wrapper {
+    margin-top: 60px;
+  }
+
+  .captcha-wrapper {
+    margin-top: 40px;
+  }
+
+  ul.form-errors {
+    display: none;
+  }
+
+  &--show-errors {
+    ul.form-errors {
+      display: block;
+    }
+  }
+}

@@ -18,10 +18,16 @@
 
         {{ form_start(form, {'attr': {'class': 'quote-form'}}) }}
 
+        {% if not form.vars.valid %}
+            <div class="quote-error-information"></div>
+        {% endif %}
+
         <div class="row col-x3 col-md-x2 col-sm-x1">
             {{ form_row(form.date) }}
             {{ form_row(form.duration) }}
-            {{ form_row(form.peopleCount) }}
+            <div class="people-count">
+                {{ form_row(form.peopleCount) }}
+            </div>
         </div>
 
         <div class="row col-x2 col-sm-x1">
@@ -42,11 +48,15 @@
             </div>
         </div>
 
-        <div class="fieldset m-top-1">
+        {{ form_row(form.comment) }}
+
+        <div class="fieldset fieldset--with-title location-wrapper">
+            <div class="fieldset__title">{{ 'form.quote.location'|trans }}</div>
             {{ form_row(form.location) }}
         </div>
 
-        <div class="fieldset m-top-1">
+        <div class="fieldset fieldset--with-title contact-wrapper">
+            <div class="fieldset__title">{{ 'form.quote.contact'|trans }}</div>
             <div class="row col-x3 col-md-x2 col-sm-x1">
                 {{ form_row(form.contact.gender) }}
                 {{ form_row(form.contact.firstName) }}
@@ -58,7 +68,6 @@
             </div>
         </div>
 
-        {{ form_row(form.comment) }}
         {{ form_row(form.captcha) }}
 
         <div class="flex flex--content-end">

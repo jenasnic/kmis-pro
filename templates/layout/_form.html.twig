@@ -5,7 +5,11 @@
   {%- if help is not empty -%}
     {%- set widget_attr = {attr: {'aria-describedby': id ~"_help"}} -%}
   {%- endif -%}
-  <div{% with {attr: row_attr|merge({'class': 'form-group'})} %}{{ block('attributes') }}{% endwith %}>
+  {% set cssClasses = {'class': 'form-group'} %}
+  {% if errors|length > 0 %}
+    {% set cssClasses = {'class': 'form-group form-group--with-errors'} %}
+  {% endif %}
+  <div{% with {attr: row_attr|merge(cssClasses)} %}{{ block('attributes') }}{% endwith %}>
     {{- form_label(form) -}}
     {{- form_widget(form, widget_attr) -}}
     {{- form_errors(form) -}}
@@ -23,14 +27,21 @@
   {%- endif -%}
 {%- endblock form_errors -%}
 
+{%- block hidden_widget -%}
+  {%- set type = type|default('hidden') -%}
+  <input type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock hidden_widget -%}
+
 {%- block form_widget_simple -%}
-  {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' input')|trim}) -%}
-  {{ parent() }}
+  <div class="input-wrapper">
+    {{ parent() }}
+  </div>
 {%- endblock form_widget_simple -%}
 
 {%- block textarea_widget -%}
-  {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' textarea')|trim}) -%}
-  {{ parent() }}
+  <div class="textarea-wrapper">
+    {{ parent() }}
+  </div>
 {%- endblock textarea_widget -%}
 
 {%- block button_widget -%}
@@ -44,7 +55,8 @@
 {%- endblock choice_widget_expanded -%}
 
 {%- block choice_widget_collapsed -%}
-  <div class="select">
+  <div class="select-wrapper">
+    <span class="select-icon"><i class="icon-eject"></i></span>
     {{ parent() }}
   </div>
 {%- endblock choice_widget_collapsed -%}
@@ -99,9 +111,11 @@
 {%- endblock bulma_file_widget -%}
 
 {% block google_captcha_row %}
-  <div class="form-group captcha-wrapper">
-    <div class="g-recaptcha" data-sitekey="{{ site_key }}"></div>
-    <div class="captcha-error">{{ form_errors(form) }}</div>
+  <div class="form-group {% if errors|length > 0 %} form-group--with-errors{% endif %}">
+    <div class="captcha-wrapper">
+      <div class="g-recaptcha" data-sitekey="{{ site_key }}"></div>
+      <div class="captcha-error">{{ form_errors(form) }}</div>
+    </div>
   </div>
 {% endblock %}
 

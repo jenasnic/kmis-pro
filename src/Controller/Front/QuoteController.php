@@ -14,18 +14,23 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 
 class QuoteController extends AbstractController
 {
-    #[Route('/demande-de-devis', name: 'app_quote')]
+    #[Route('/demande-de-devis', name: 'app_quote', methods: ['GET', 'POST', 'PATCH'])]
     public function contact(
         Request $request,
         NewQuoteHandler $newQuoteHandler,
         TranslatorInterface $translator,
     ): Response {
-        $form = $this->createForm(QuoteType::class);
+        $isPatch = $request->isMethod(Request::METHOD_PATCH);
+        $formOptions = $isPatch ? [
+            'method' => Request::METHOD_PATCH,
+            'validation_groups' => false,
+        ] : [];
+
+        $quote = new Quote();
+        $form = $this->createForm(QuoteType::class, $quote, $formOptions);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            /** @var Quote $quote */
-            $quote = $form->getData();
+        if (!$isPatch && $form->isSubmitted() && $form->isValid()) {
             $newQuoteHandler->handle(new NewQuoteCommand($quote));
 
             $this->addFlash('info', $translator->trans('front.quote.page.new_quote_success'));

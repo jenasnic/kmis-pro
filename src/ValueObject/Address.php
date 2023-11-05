@@ -24,15 +24,12 @@ class Address
     private ?string $city;
 
     #[ORM\Column(type: 'string', length: 55, nullable: true)]
-    #[Assert\NotBlank]
     private ?string $department;
 
     #[ORM\Column(type: 'string', length: 55, nullable: true)]
-    #[Assert\NotBlank]
     private ?string $region;
 
     #[ORM\Column(type: 'string', length: 55, nullable: true)]
-    #[Assert\NotBlank]
     private ?string $country;
 
     public function __construct(

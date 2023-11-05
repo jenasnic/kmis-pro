@@ -24,6 +24,7 @@ class Contact
     private ?string $lastName = null;
 
     #[ORM\Column(type: 'string', length: 55, nullable: true, enumType: GenderEnum::class)]
+    #[Assert\NotNull]
     private ?GenderEnum $gender = null;
 
     #[ORM\Column(type: 'string', length: 55, nullable: true)]
