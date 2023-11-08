@@ -6,9 +6,7 @@ use App\Service\Localization\DepartmentResolver;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/**
- * @ORM\Embeddable
- */
+#[ORM\Embeddable]
 class Address
 {
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

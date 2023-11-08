@@ -33,4 +33,17 @@ class QuoteRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    /**
+     * @return array<Quote>
+     */
+    public function search(): array
+    {
+        return $this
+            ->createQueryBuilder('quote')
+            ->orderBy('quote.date')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

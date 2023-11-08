@@ -1,0 +1,95 @@
+{% extends 'layout/_back.html.twig' %}
+
+{% block body %}
+
+    <nav class="level">
+        <div class="level-left">
+            <h1 class="title">{{ 'back.quote.show.title'|trans }}</h1>
+        </div>
+        <div class="level-right">
+            <p class="level-item">
+                <a href="{{ path('bo_quote_list') }}" class="button is-outlined">
+                    <span>{{ 'global.back'|trans }}</span>
+                    <span class="icon"><i class="icon-back"></i></span>
+                </a>
+            </p>
+            {% if quote.id is not null %}
+                <p class="level-item">
+                    <form
+                        data-confirm
+                        data-confirm-message="{{ 'global.confirmDelete'|trans }}"
+                        action="{{ path('bo_quote_delete', {'quote': quote.id}) }}"
+                        method="POST"
+                    >
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete-'~quote.id) }}" />
+                        <button type="submit" class="button is-danger">
+                            <span>{{ 'global.delete'|trans }}</span>
+                            <span class="icon"><i class="icon-cross"></i></span>
+                        </button>
+                    </form>
+                </p>
+            {% endif %}
+        </div>
+    </nav>
+
+    {{ form_start(form) }}
+
+    <div class="columns">
+        <div class="column">{{ form_row(form.date) }}</div>
+        <div class="column">{{ form_row(form.duration) }}</div>
+        <div class="column">{{ form_row(form.peopleCount) }}</div>
+    </div>
+
+    <div class="columns">
+        <div class="column">{{ form_row(form.organization, {'attr': {'data-field-update': 'organization-note'}}) }}</div>
+        <div class="column" data-field-update-target="organization-note">
+            {% if form.organizationNote is defined %}
+                {{ form_row(form.organizationNote) }}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column">{{ form_row(form.service, {'attr': {'data-field-update': 'service-note'}}) }}</div>
+        <div class="column" data-field-update-target="service-note">
+            {% if form.serviceNote is defined %}
+                {{ form_row(form.serviceNote) }}
+            {% endif %}
+        </div>
+    </div>
+
+        {{ form_row(form.comment) }}
+
+    <fieldset class="fieldset">
+        <label>{{ 'form.quote.location'|trans }}</label>
+        <div class="columns">
+            <div class="column">{{ form_row(form.location.street) }}</div>
+        </div>
+        <div class="columns">
+            <div class="column is-2">{{ form_row(form.location.zipCode) }}</div>
+            <div class="column">{{ form_row(form.location.city) }}</div>
+        </div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+        <label>{{ 'form.quote.contact'|trans }}</label>
+        <div class="columns">
+            <div class="column is-2">{{ form_row(form.contact.gender) }}</div>
+            <div class="column">{{ form_row(form.contact.firstName) }}</div>
+            <div class="column">{{ form_row(form.contact.lastName) }}</div>
+        </div>
+        <div class="columns">
+            <div class="column">{{ form_row(form.contact.phone) }}</div>
+            <div class="column">{{ form_row(form.contact.email) }}</div>
+        </div>
+    </fieldset>
+
+    <div class="is-flex is-flex-direction-row is-justify-content-flex-end is-align-content-center">
+        <div class="block">
+            <button type="submit" class="button is-primary">{{ 'global.validate'|trans }}</button>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}

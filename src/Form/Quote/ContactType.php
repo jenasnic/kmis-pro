@@ -5,6 +5,7 @@ namespace App\Form\Quote;
 use App\Entity\Quote\Contact;
 use App\Enum\GenderEnum;
 use App\Form\Type\EnumType;
+use App\Form\Type\MaskedType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -21,7 +22,9 @@ class ContactType extends AbstractType
                 'enum' => GenderEnum::class,
                 'expanded' => true,
             ])
-            ->add('phone', TextType::class)
+            ->add('phone', MaskedType::class, [
+                'mask' => MaskedType::PHONE_MASK,
+            ])
             ->add('email', TextType::class)
         ;
     }

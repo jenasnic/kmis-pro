@@ -5,6 +5,9 @@ global.confirmDelete: Confirmer la suppression ?
 global.delete: Supprimer
 global.error: Erreur
 global.login: Se connecter
+global.logout: Se déconnecter
+global.save: Enregistrer
+global.search: Rechercher
 global.validate: Valider
 
 enum.duration.TWO_HOURS: 2 heures
@@ -18,17 +21,16 @@ enum.gender.FEMALE: Mme
 form.address.city: Ville
 form.address.street: Adresse
 form.address.zipCode: Code postal
-
 form.contact.email: Email
 form.contact.firstName: Prénom
 form.contact.gender: Civilité
 form.contact.lastName: Nom
 form.contact.phone: Téléphone
-
 form.contactForm.email: Votre email
 form.contactForm.message: Message
 form.contactForm.success: Votre demande a bien été envoyée.
-
+form.organization.label: Libellé
+form.organization.withNote: A préciser
 form.quote.comment: Informations complémentaires
 form.quote.contact: Coordonnées
 form.quote.date: Date
@@ -39,27 +41,55 @@ form.quote.organizationNote: Précisez
 form.quote.peopleCount: Nb. participants
 form.quote.service: Type de prestation
 form.quote.serviceNote: Précisez
+form.service.label: Libellé
+form.service.withNote: A préciser
 
 front.coaching.header.title: Coaching
-
 front.contact.header.title: Contact
-front.contact.page.title: Contactez-nous
 front.contact.page.contact_form_success: Votre demande de devis a bien été prise en compte.
-
+front.contact.page.title: Contactez-nous
 front.footer.link.cookie: Gestion des cookies
 front.footer.link.google: Référencement Google gratuit
 front.footer.link.privacy: Protection des données
-
-front.quote.header.title: Devis
-front.quote.page.new_quote_success: Votre demande de devis a bien été prise en compte.
-front.quote.page.title: Demande de devis
-
 front.menu.item.coaching: Coaching
 front.menu.item.contact: Contact
 front.menu.item.services: Services
+front.quote.header.title: Devis
+front.quote.page.new_quote_success: Votre demande de devis a bien été prise en compte.
+front.quote.page.title: Demande de devis
 front.services.header.title: Services proposés
 
 login.password: Mot de passe
 login.title: Connexion
 login.username: Login
 
+back.menu.organization: Organisations
+back.menu.quote: Devis
+back.menu.service: Services
+back.organization.delete.success: Organisation supprimée
+back.organization.edit.new: Nouvelle organisation
+back.organization.edit.success: Organisation mise à jour
+back.organization.edit.title: Organisation
+back.organization.list.action.add: Nouvelle organisation
+back.organization.list.count: Organisation(s)
+back.organization.list.header.label: Libellé
+back.organization.list.header.withNote: A préciser
+back.organization.list.order.success: Ordre des organisations mis à jour
+back.quote.delete.success: Devis supprimé
+back.quote.list.count: Devis
+back.quote.list.header.date: Date
+back.quote.list.header.email: Email
+back.quote.list.header.firstName: Prénom
+back.quote.list.header.lastName: Nom
+back.quote.list.header.phone: Téléphone
+back.quote.show.edit_quote_success: Demande de devis mise à jour
+back.quote.show.title: Détail devis
+back.service.delete.success: Service supprimé
+back.service.edit.new: Nouveau service
+back.service.edit.success: Service mis à jour
+back.service.edit.title: Service
+back.service.list.action.add: Nouveau service
+back.service.list.count: Service(s)
+back.service.list.header.label: Libellé
+back.service.list.header.withNote: A préciser
+back.service.list.order.success: Ordre des services mis à jour

@@ -33,12 +33,14 @@
 {%- endblock hidden_widget -%}
 
 {%- block form_widget_simple -%}
+  {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' input')|trim}) -%}
   <div class="input-wrapper">
     {{ parent() }}
   </div>
 {%- endblock form_widget_simple -%}
 
 {%- block textarea_widget -%}
+  {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' textarea')|trim}) -%}
   <div class="textarea-wrapper">
     {{ parent() }}
   </div>
@@ -55,6 +57,7 @@
 {%- endblock choice_widget_expanded -%}
 
 {%- block choice_widget_collapsed -%}
+  {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' select')|trim}) -%}
   <div class="select-wrapper">
     <span class="select-icon"><i class="icon-eject"></i></span>
     {{ parent() }}

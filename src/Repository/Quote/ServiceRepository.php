@@ -4,6 +4,7 @@ namespace App\Repository\Quote;
 
 use App\Entity\Quote\Service;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -32,5 +33,32 @@ class ServiceRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * @return array<Service>
+     */
+    public function findOrdered(): array
+    {
+        return $this
+            ->createQueryBuilder('service')
+            ->orderBy('service.rank', Criteria::ASC)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function getFirstRank(): int
+    {
+        $query = $this
+            ->createQueryBuilder('service')
+            ->select('MIN(service.rank)')
+            ->getQuery()
+        ;
+
+        /** @var int $minRank */
+        $minRank = $query->getSingleScalarResult() ?? 0;
+
+        return $minRank;
     }
 }

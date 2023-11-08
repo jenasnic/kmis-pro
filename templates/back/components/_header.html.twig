@@ -1,0 +1,27 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+
+    <div class="navbar-brand">
+        <a href="{{ path('app_home') }}" class="navbar-item">
+            <i class="icon-home is-size-3"></i>
+        </a>
+    </div>
+
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a href="{{ path('bo_quote_list') }}" class="navbar-item">{{ 'back.menu.quote'|trans }}</a>
+            <a href="{{ path('bo_organization_list') }}" class="navbar-item">{{ 'back.menu.organization'|trans }}</a>
+            <a href="{{ path('bo_service_list') }}" class="navbar-item">{{ 'back.menu.service'|trans }}</a>
+        </div>
+    </div>
+
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="username">{{ app.user.email }}</div>
+        </div>
+        <div class="navbar-item">
+            <div class="buttons">
+                <a class="button is-warning" href="{{ path('app_logout') }}">{{ 'global.logout'|trans }}</a>
+            </div>
+        </div>
+    </div>
+

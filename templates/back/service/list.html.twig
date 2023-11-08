@@ -1,0 +1,72 @@
+{% extends 'layout/_back.html.twig' %}
+
+{% block body %}
+
+    <h2 class="subtitle">{{ serviceCount }} {{ 'back.service.list.count'|trans }}</h2>
+
+    <div data-grid="data-grid">
+
+        <nav class="level">
+            <div class="level-left"></div>
+            <div class="level-right">
+                <p class="level-item">
+                    <a href="{{ path('bo_service_new') }}" class="button is-primary">
+                        <span>{{ 'back.service.list.action.add'|trans }}</span>
+                        <span class="icon is-small">
+                            <i class="icon-more"></i>
+                        </span>
+                    </a>
+                </p>
+            </div>
+        </nav>
+
+        {{ form_start(form, {'attr': {'data-sort-list': 'data-sort-list'}}) }}
+
+        {% embed 'back/components/_table.html.twig' with {'isDraggable': true} %}
+
+            {% block thead %}
+                <th class="full">{{ 'back.service.list.header.label'|trans }}</th>
+                <th class="has-text-centered">{{ 'back.service.list.header.withNote'|trans }}</th>
+                <th></th>
+            {% endblock %}
+
+            {% block tbody %}
+                {% if serviceCount > 0 %}
+                    {% for i in 0..(serviceCount-1) %}
+                        <tr>
+                            <td class="draggable">
+                                {{ form.children[i].vars.data.label }}
+                                {{ form_row(form.children[i].rank, {'attr': {'data-rank': ''}}) }}
+                            </td>
+                            <td class="has-text-centered">
+                                {% if form.children[i].vars.data.withNote %}
+                                    <span class="icon has-text-primary"><i class="icon-checkmark"></i></span>
+                                {% else %}
+                                    <span class="icon has-text-warning"><i class="icon-cross"></i></span>
+                                {% endif %}
+                            </td>
+                            <td class="action">
+                                <div class="action-wrapper">
+                                    <a href="{{ path('bo_service_edit', {'service': form.children[i].vars.data.id}) }}" class="button is-primary">
+                                        <span class="icon"><i class="icon-pencil"></i></span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            {% endblock %}
+
+        {% endembed %}
+
+        <div class="is-flex is-flex-direction-row is-justify-content-flex-end is-align-content-center">
+            <div class="block">
+                <button type="submit" class="button is-primary">{{ 'global.save'|trans }}</button>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

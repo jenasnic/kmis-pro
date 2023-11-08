@@ -1,0 +1,72 @@
+{% extends 'layout/_back.html.twig' %}
+
+{% block body %}
+
+    <h2 class="subtitle">{{ quotes|length }} {{ 'back.quote.list.count'|trans }}</h2>
+
+    <div data-grid="data-grid">
+
+        <nav class="level">
+            <div class="level-left">
+                <div class="level-item">
+                    <div class="field has-addons">
+                        <p class="control has-icons-left">
+                            <input
+                                id="input-search-id"
+                                class="search input"
+                                type="text"
+                                autofocus="autofocus"
+                                placeholder="{{ 'global.search'|trans }}"
+                                data-search='["firstName", "lastName", "email"]'
+                            />
+                            <span class="icon is-small is-left">
+                                <i class="icon-search"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        {% embed 'back/components/_table.html.twig' %}
+
+            {% block thead %}
+                <th>
+                    {{ 'back.quote.list.header.date'|trans }}
+                    <div class="sort" data-sort="date"></div>
+                </th>
+                <th>
+                    {{ 'back.quote.list.header.firstName'|trans }}
+                    <div class="sort" data-sort="firstName"></div>
+                </th>
+                <th>
+                    {{ 'back.quote.list.header.lastName'|trans }}
+                    <div class="sort" data-sort="lastName"></div>
+                </th>
+                <th>{{ 'back.quote.list.header.phone'|trans }}</th>
+                <th>{{ 'back.quote.list.header.email'|trans }}</th>
+                <th></th>
+            {% endblock %}
+
+            {% block tbody %}
+                {% for quote in quotes %}
+                    <tr>
+                        <td class="date">{{ quote.date|date('d/m/Y') }}</td>
+                        <td class="firstName">{{ quote.contact.firstName }}</td>
+                        <td class="lastName">{{ quote.contact.lastName }}</td>
+                        <td>{{ quote.contact.phone }}</td>
+                        <td class="email">{{ quote.contact.email }}</td>
+                        <td class="action">
+                            <a href="{{ path('bo_quote_edit', {'quote': quote.id}) }}" class="button is-primary">
+                                <span class="icon"><i class="icon-eye"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endblock %}
+
+        {% endembed %}
+
+    </div>
+
+{% endblock %}

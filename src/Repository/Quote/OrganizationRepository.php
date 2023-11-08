@@ -4,6 +4,7 @@ namespace App\Repository\Quote;
 
 use App\Entity\Quote\Organization;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -32,5 +33,32 @@ class OrganizationRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * @return array<Organization>
+     */
+    public function findOrdered(): array
+    {
+        return $this
+            ->createQueryBuilder('organization')
+            ->orderBy('organization.rank', Criteria::ASC)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function getFirstRank(): int
+    {
+        $query = $this
+            ->createQueryBuilder('organization')
+            ->select('MIN(organization.rank)')
+            ->getQuery()
+        ;
+
+        /** @var int $minRank */
+        $minRank = $query->getSingleScalarResult() ?? 0;
+
+        return $minRank;
     }
 }

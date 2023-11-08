@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,29 +13,16 @@ class LoginController extends AbstractController
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         if ($this->isGranted('IS_AUTHENTICATED_FULLY')) {
-            return $this->redirectToRoute('app_dashboard', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('bo_quote_list', [], Response::HTTP_SEE_OTHER);
         }
 
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('pages/security/login.html.twig', [
+        return $this->render('login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
         ]);
-    }
-
-    /**
-     * @Route("/login-redirect", name="app_login_redirect")
-     */
-    #[Route('/login-redirect', name: 'app_login_redirect')]
-    public function loginRedirect(): Response
-    {
-        if (null !== $this->getUser() && in_array(User::ROLE_ADMIN, $this->getUser()->getRoles())) {
-            return $this->redirectToRoute('bo_dashboard');
-        }
-
-        return $this->redirectToRoute('app_home');
     }
 
     #[Route('/logout', name: 'app_logout')]

@@ -61,8 +61,11 @@ class QuoteType extends AbstractType
                 'empty_data' => null,
             ])
             ->add('contact', ContactType::class, ['label' => false])
-            ->add('captcha', GoogleCaptchaType::class)
         ;
+
+        if ($options['with-captcha']) {
+            $builder->add('captcha', GoogleCaptchaType::class);
+        }
 
         $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {
             /** @var Quote|null $data */
@@ -105,7 +108,10 @@ class QuoteType extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
+        $resolver->setDefined('with-captcha');
+        $resolver->setAllowedTypes('with-captcha', 'bool');
         $resolver->setDefaults([
+            'with-captcha' => true,
             'data_class' => Quote::class,
             'label_format' => 'form.quote.%name%',
         ]);

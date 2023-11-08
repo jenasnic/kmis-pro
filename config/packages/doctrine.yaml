@@ -22,7 +22,6 @@ doctrine:
                 alias: App
             App_embeddable:
                 is_bundle: false
-                type: annotation
                 dir: '%kernel.project_dir%/src/ValueObject'
                 prefix: 'App\ValueObject'
 
