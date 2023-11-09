@@ -118,7 +118,7 @@ h2 {
 }
 
 .section {
-  margin: $default-margin auto 2 * $default-margin auto;
+  margin: $default-margin auto $default-margin auto;
   max-width: 976px;
 
   @include media.below(md) {
@@ -128,4 +128,8 @@ h2 {
   @include media.below(sm) {
     padding: 0 30px;
   }
+}
+
+.separator {
+  height: $default-margin;
 }

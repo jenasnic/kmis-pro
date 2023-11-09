@@ -12,13 +12,20 @@
 
 {% block body %}
 
+    <div class="separator"></div>
+
     <h2 data-aos="zoom-out" data-aos-duration="1200"><span class="title-decoration">Qui sommes-nous ?</span></h2>
     <div class="section" itemscope itemtype="https://schema.org/Organization">
         <p><span itemprop="name">KMIS Pro</span> intervient sur un grand nombre de problématiques en partant de la défense de la personne, du harcèlement, de la perte ou manque de confiance en passant par la gestion du stress, de crise et de public difficile et allant jusqu’à l’amélioration de la performance, quelle soit personnelle ou collective.</p>
         <p>Toutes ces problématiques peuvent trouver une solution à travers nos différents types de prestations : formation en présentiel, ateliers pratiques de mise en situation , ou coachings privés.</p>
     </div>
 
-    {# public visé / public concerné #}
+    <div class="quote">
+        <span class="quote-text">Avec Kmis Pro, au plus près de vous et de vos préoccupations pour atteindre vos objectifs.</span>
+    </div>
+
+    <div class="separator"></div>
+
     <h2 data-aos="zoom-out"><span class="title-decoration">A qui s'adresse KMIS Pro ?</span></h2>
     <div id="service-target" class="target-wrapper with-background with-overlay with-overlay--dark">
         <img src="{{ asset('build/images/bg-02.webp') }}" alt="A qui s'adresse KMIS Pro ?" />
@@ -35,6 +42,8 @@
         </div>
     </div>
 
+    <div class="separator"></div>
+
     <h2 data-aos="zoom-out"><span class="title-decoration">Nos prestations</span></h2>
     <div id="service-type" class="service-wrapper">
         <a href="#" class="service with-background with-overlay">
@@ -50,5 +59,11 @@
             <span class="button-wrapper"><span class="button-text">Cours et coaching privés</span></span>
         </a>
     </div>
+
+    <div class="quote">
+        <span class="quote-text">Avec KMIS Pro, décuplez vos capacités et votre potentiel.</span>
+    </div>
+
+    <div class="separator"></div>
 
 {% endblock %}
