@@ -1,9 +1,13 @@
 @use 'front/color';
 @use 'front/fonts';
 
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');; //'Teko', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); //'Raleway', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap'); //'Oswald', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); //'Poppins', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap'); //'Barlow', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap'); //'Kanit', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap'); //'Fira Sans', sans-serif;
 
 :root {
     --primary-color: #{color.$geebung};

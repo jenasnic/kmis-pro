@@ -30,7 +30,7 @@ form.contactForm.email: Votre email
 form.contactForm.message: Message
 form.contactForm.success: Votre demande a bien été envoyée.
 form.organization.label: Libellé
-form.organization.withNote: A préciser
+form.organization.withNote: A préciser
 form.quote.comment: Informations complémentaires
 form.quote.contact: Coordonnées
 form.quote.date: Date
@@ -42,7 +42,7 @@ form.quote.peopleCount: Nb. participants
 form.quote.service: Type de prestation
 form.quote.serviceNote: Précisez
 form.service.label: Libellé
-form.service.withNote: A préciser
+form.service.withNote: A préciser
 
 front.coaching.header.title: Coaching
 front.contact.header.title: Contact
@@ -73,7 +73,7 @@ back.organization.edit.title: Organisation
 back.organization.list.action.add: Nouvelle organisation
 back.organization.list.count: Organisation(s)
 back.organization.list.header.label: Libellé
-back.organization.list.header.withNote: A préciser
+back.organization.list.header.withNote: A préciser
 back.organization.list.order.success: Ordre des organisations mis à jour
 back.quote.delete.success: Devis supprimé
 back.quote.list.count: Devis
@@ -91,5 +91,5 @@ back.service.edit.title: Service
 back.service.list.action.add: Nouveau service
 back.service.list.count: Service(s)
 back.service.list.header.label: Libellé
-back.service.list.header.withNote: A préciser
+back.service.list.header.withNote: A préciser
 back.service.list.order.success: Ordre des services mis à jour

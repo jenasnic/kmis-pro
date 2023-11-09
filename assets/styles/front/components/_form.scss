@@ -17,7 +17,7 @@
   width: 23px;
 }
 
-@mixin decorate-style {
+@mixin decorate-input {
   content: '';
   position: absolute;
   width: 10px;
@@ -93,7 +93,7 @@
   }
 
   &:before {
-    @include decorate-style();
+    @include decorate-input();
     top: 3px;
     left: 3px;
   }
@@ -101,7 +101,7 @@
 
 .input-wrapper {
   &:after {
-    @include decorate-style();
+    @include decorate-input();
     transform: rotate(180deg);
     bottom: 3px;
     right: 3px;
@@ -274,13 +274,13 @@ select {
     top: -32px;
 
     &:before {
-      @include decorate-style();
+      @include decorate-input();
       left: 6px;
       top: 6px;
     }
 
     &:after {
-      @include decorate-style();
+      @include decorate-input();
       top: 6px;
       transform: rotate(90deg);
       right: 6px;

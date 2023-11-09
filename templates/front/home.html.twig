@@ -12,24 +12,43 @@
 
 {% block body %}
 
+    <h2 data-aos="zoom-out" data-aos-duration="1200"><span class="title-decoration">Qui sommes-nous ?</span></h2>
     <div class="section" itemscope itemtype="https://schema.org/Organization">
-        <h2>Présentation</h2>
-{#        <h2 data-aos="zoom-out" data-aos-duration="1000">Présentation</h2>#}
-        <p><span itemprop="name">KMIS Pro</span> lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consequatur, culpa cumque distinctio dolores ducimus earum, ex facere facilis fugit maxime molestiae molestias omnis provident quae quis quo soluta voluptatem.</p>
-        <p>Aut commodi consequatur eaque facere fuga fugiat ipsam, laborum modi nobis porro qui rerum voluptatibus. Aperiam aspernatur deserunt dicta dolore minus molestiae, natus nesciunt sunt? Cum ducimus explicabo reprehenderit ut?</p>
-        <p>Adipisci amet blanditiis distinctio dolorem ea, earum eius enim eum explicabo, fugit illo impedit itaque laborum natus neque odit officiis optio quas quia quo quos rem sit suscipit totam ut. Dolore, eum quasi! Dicta nulla, recusandae!</p>
-        <p>Atque blanditiis consequuntur deserunt doloribus excepturi laboriosam, laudantium maiores maxime molestias nisi odit omnis optio praesentium quas quia quis rem rerum soluta ullam, voluptate. Aspernatur blanditiis delectus dolorem fugit harum iste iure minus modi neque, nisi numquam quia sed unde velit vitae?</p>
-        <p>Commodi hic magni nesciunt obcaecati quas quia quibusdam recusandae repudiandae totam, ut. Aliquam amet asperiores at aut distinctio doloremque ducimus incidunt ipsa ipsam molestias nesciunt praesentium quod reiciendis rem, saepe similique soluta? Asperiores aspernatur cupiditate dolor impedit pariatur quis saepe tempore veniam.</p>
+        <p><span itemprop="name">KMIS Pro</span> intervient sur un grand nombre de problématiques en partant de la défense de la personne, du harcèlement, de la perte ou manque de confiance en passant par la gestion du stress, de crise et de public difficile et allant jusqu’à l’amélioration de la performance, quelle soit personnelle ou collective.</p>
+        <p>Toutes ces problématiques peuvent trouver une solution à travers nos différents types de prestations : formation en présentiel, ateliers pratiques de mise en situation , ou coachings privés.</p>
     </div>
 
-    <div class="section">
-        <h2 data-aos="zoom-out">@todo</h2>
-        <p>@todo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor dolores eaque est fugit ipsum, iste maxime minima natus nostrum pariatur perspiciatis quod ratione, soluta totam unde, vero vitae voluptas voluptate.</p>
+    {# public visé / public concerné #}
+    <h2 data-aos="zoom-out"><span class="title-decoration">A qui s'adresse KMIS Pro ?</span></h2>
+    <div id="service-target" class="target-wrapper with-background with-overlay with-overlay--dark">
+        <img src="{{ asset('build/images/bg-02.webp') }}" alt="A qui s'adresse KMIS Pro ?" />
+        <div class="target-title" data-aos="fade-down" data-aos-duration="1200">Nous intervenons pour :</div>
+        <div class="target-list">
+            <div class="target-item" data-aos="fade-up" data-aos-duration="1200" data-target-item="0">Les établissements scolaires</div>
+            <div class="target-item" data-aos="fade-up" data-aos-duration="1200" data-target-item="1">Les administrations recevant du public</div>
+            <div class="target-item" data-aos="fade-up" data-aos-duration="1200" data-target-item="2">Les entreprises et leurs employés</div>
+        </div>
+        <div class="target-info" data-aos="fade-up" data-aos-duration="1200">
+            <div class="target-detail" data-target-detail="0">Ne laissez plus votre public être une cible ou une victime</div>
+            <div class="target-detail" data-target-detail="1">Ayez toutes les clés pour gérer les situations difficile</div>
+            <div class="target-detail" data-target-detail="2">Boostez le potentiel individuel et collectif</div>
+        </div>
     </div>
 
-    <div class="section">
-        <h2 data-aos="zoom-out">@todo</h2>
-        <p>@todo : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequuntur deleniti laboriosam magni mollitia, nemo odio porro quis, ratione rerum sunt suscipit! Corporis ducimus explicabo fugiat, illo impedit nostrum voluptatum.</p>
+    <h2 data-aos="zoom-out"><span class="title-decoration">Nos prestations</span></h2>
+    <div id="service-type" class="service-wrapper">
+        <a href="#" class="service with-background with-overlay">
+            <img src="{{ asset('build/images/service-training.webp') }}" alt="Formations en présentiel" />
+            <span class="button-wrapper"><span class="button-text">Formations en présentiel</span></span>
+        </a>
+        <a href="#" class="service service--down with-background with-overlay">
+            <img src="{{ asset('build/images/service-work-group.webp') }}" alt="Ateliers" />
+            <span class="button-wrapper"><span class="button-text">Ateliers</span></span>
+        </a>
+        <a href="#" class="service with-background with-overlay">
+            <img src="{{ asset('build/images/service-coaching.webp') }}" alt="Cours et coaching privés" />
+            <span class="button-wrapper"><span class="button-text">Cours et coaching privés</span></span>
+        </a>
     </div>
 
 {% endblock %}

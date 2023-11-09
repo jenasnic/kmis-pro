@@ -2,280 +2,171 @@
 @use '../icons';
 @use '../media';
 
-.sporting-slider {
-  box-sizing: border-box;
-  font-size: 1rem;
-  height: 580px;
-  overflow: hidden;
-  padding-bottom: 50px;
-  position: relative;
-  width: 100%;
+@mixin decorate-selection {
+  padding: 0 20px;
 
-  .swiper-button-prev, .swiper-button-next {
-    color: color.$primary-color;
-
-    @include media.below(sm) {
-      display: none;
-    }
+  &:before, &:after {
+    content: '';
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 6;
   }
 
-  .swiper-pagination {
-    .swiper-pagination-bullet {
-      height: 20px;
-      margin: 0 10px;
-      width: 20px;
-
-      &-active {
-        background-color: color.$primary-color;
-      }
-    }
+  &:before {
+    border-left: 1px solid color.$primary-color;
+    border-top: 1px solid color.$primary-color;
+    left: 0;
+    top: 0;
   }
 
-  .sporting-slide {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    margin: 0 auto;
-    width: calc(100% - 100px);
-
-    @include media.below(sm) {
-      width: 100%;
-    }
-
-    .title {
-      color: color.$text-dark-color;
-      font-size: 3em;
-      font-weight: 700;
-      line-height: 1.5em;
-      text-transform: uppercase;
-
-      @include media.below(sm) {
-        font-size: 1.5em;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-    }
-
-    .content-wrapper {
-      display: flex;
-      flex-grow: 1;
-      justify-content: flex-end;
-
-      > img {
-        filter: grayscale(100%);
-      }
-
-      .content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 33%;
-        z-index: 9;
-
-        @include media.below(md) {
-          width: 50%;
-        }
-
-        @include media.below(sm) {
-          width: 100%;
-        }
-
-        > div {
-          align-items: center;
-          color: color.$white;
-          display: flex;
-          justify-content: center;
-          flex-grow: 1;
-          font-size: 1.6em;
-          line-height: 1.6em;
-          padding: 20px;
-          text-align: center;
-          z-index: 9;
-        }
-
-        > a.link-icon-button {
-          align-self: flex-end;
-          display: flex;
-          font-size: 1.6em;
-          padding: 10px 25px;
-          text-transform: uppercase;
-          z-index: 9;
-
-          i {
-            transform: translateY(-3px) rotate(90deg);
-            display: block;
-            margin-left: 15px;
-          }
-        }
-      }
-    }
+  &:after {
+    border-bottom: 1px solid color.$primary-color;
+    border-right: 1px solid color.$primary-color;
+    bottom: 0;
+    right: 0;
   }
 }
 
-.sessions {
+.service-wrapper {
+  align-items: center;
+  box-sizing: border-box;
   display: flex;
-  font-size: 1rem;
   justify-content: space-between;
-  margin-bottom: 50px;
-  width: 100%;
+  margin: 0 auto 150px auto;
+  max-width: 1600px;
+  width: 100vw;
 
-  @include media.below(md) {
-    align-items: center;
+  .service {
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-  }
+    height: 60vh;
+    justify-content: flex-end;
+    transition: all 0.6s ease-out;
+    width: 30%;
 
-  .session {
-    background-color: color.$background-light-color;
-    border-radius: 25px;
-    box-shadow: 2px 2px 5px -2px color.$scorpion;
-    box-sizing: border-box;
-    font-size: 1.5em;
-    padding: 30px;
-    width: calc(50% - 30px);
-
-    @include media.below(md) {
-      max-width: 600px;
-      width: 100%;
-
-      &:not(:last-child) {
-        margin-bottom: 40px;
-      }
+    &--down {
+      transform: translateY(50px);
     }
 
-    @include media.below(sm) {
-      padding: 10px;
+    img {
+      filter: grayscale(100%);
     }
 
-    &__city {
-      align-items: center;
+    .button-wrapper{
+      background-color: color.$primary-color;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      margin-bottom: 20px;
+      padding: 10px 10px;
+      width: 100%;
+      z-index: 5;
 
-      > .name {
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-
-      > .address {
-        color: color.$text-light-color;
-        font-size: 0.7em;
-        font-style: italic;
-        padding: 20px 0 10px 0;
-        text-align: center;
-      }
-    }
-
-    &__time {
-      padding-left: 10px;
-
-      > li {
-        padding: 5px 10px;
+      .button-text {
+        color: color.$white;
+        font-size: 1.9em;
+        padding-right: 50px;
+        position: relative;
+        transition: all 0.3s ease-out;
 
         &:before {
-          @include icons.icon(icons.$icon-play);
-          color: color.$primary-color;
+          @include icons.icon(icons.$icon-search);
+          color: color.$white;
+          position: absolute;
+          right: 0;
+          top: 0;
         }
+      }
+    }
 
-        > ul {
-          padding: 10px 10px 10px 30px;
+    &:hover {
+      box-shadow: 0 0 5px 1px color.$background-dark-color;
 
-          @include media.below(sm) {
-            padding: 10px;
-          }
-
-          > li {
-            font-size: 0.7em;
-            padding: 5px 0;
-
-            &:before {
-              @include icons.icon(icons.$icon-checkmark);
-              color: color.$primary-color;
-              font-size: 0.8em;
-              margin-right: 10px;
-            }
-          }
-        }
+      .button-text {
+        font-size: 2.1em;
       }
     }
   }
 }
 
-.card {
-  background-color: color.$background-light-color;
-  border-radius: 25px;
-  box-shadow: 2px 2px 5px -2px color.$scorpion;
+.target-wrapper {
+  align-items: center;
   box-sizing: border-box;
-  color: color.$text-dark-color;
-  font-size: 1.5em;
-  margin: 0 auto 50px auto;
-  max-width: 600px;
-  padding: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  height: 70vh;
+  justify-content: center;
+  max-height: 700px;
+  min-height: 500px;
+  padding: 50px 0;
+  width: 100vw;
 
-  &__title {
+  img {
+    filter: grayscale(100%);
+  }
+
+  .target-title {
+    color: color.$white;
+    font-size: 3em;
     font-weight: 700;
-    text-align: center;
+    z-index: 5;
   }
 
-  &__note {
-    padding: 20px 10px 10px;
-
-    ul {
-      li {
-        font-size: 0.7em;
-        font-style: italic;
-        padding: 5px 0;
-        text-align: center;
-
-        &:before {
-          @include icons.icon(icons.$icon-play);
-          color: color.$primary-color;
-          padding-right: 5px;
-        }
-      }
-    }
-  }
-
-  &__detail {
+  .target-list {
+    align-items: center;
     display: flex;
-    justify-content: space-around;
-    margin-top: 40px;
+    flex-direction: column;
+    font-size: 2.3em;
+    gap: 10px;
+    justify-content: center;
+    z-index: 5;
 
-    > ul {
-      padding: 0 20px;
+    .target-item {
+      @include decorate-selection();
+      color: color.$white;
+      cursor: default;
+      opacity: 0.4;
 
-      > div {
-        margin-bottom: 10px;
+      &:before, &:after {
+        height: 0;
+        transition: all 0.6s ease-out;
+        width: 0;
       }
 
-      > li {
-        font-size: 0.7em;
-        padding: 5px 0;
+      &.active {
+        color: color.$primary-color;
+        opacity: 1;
 
-        &:before {
-          @include icons.icon(icons.$icon-checkmark);
-          color: color.$primary-color;
-          font-size: 0.8em;
-          margin-right: 10px;
-        }
-
-        i {
-          color: color.$primary-color;
+        &:before, &:after {
+          height: 10px;
+          width: 10px;
         }
       }
     }
   }
 
-  &.equipment {
-    .card__detail {
-      > ul {
-        &:first-child {
-          border-right: 1px solid color.$primary-color;
-        }
+  .target-info {
+    height: 40px;
+    position: relative;
+    width: 710px;
+    z-index: 5;
+
+    .target-detail {
+      color: color.$white;
+      font-size: 2em;
+      font-style: italic;
+      font-weight: 700;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      transition: all 0.9s ease-out;
+      width: 100%;
+
+      &.active {
+        opacity: 1;
       }
     }
   }
