@@ -1,0 +1,96 @@
+{% extends 'layout/_front.html.twig' %}
+
+{% block title %}{{ 'front.target.header.title'|trans }}{% endblock %}
+
+{% block meta %}
+    <meta name="keywords" content="KMIS Pro, self-defense, sécurité, formation, Oise, Verneuil-en-Halatte" />
+    <meta name="description" content="@todo">
+    <meta name="og:title" property="og:title" content="Coaching / Cours privés">
+{% endblock %}
+
+{% block page_classes %}target-page{% endblock %}
+
+{% block header %}
+    {% include 'front/components/_banner.html.twig' with {
+        'image': asset('build/images/todo.webp'),
+        'title': ('front.target.header.title'|trans),
+    } only %}
+{% endblock %}
+
+{% block body %}
+
+    <div class="separator"></div>
+
+    <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Établissements scolaires</span></h2>
+
+    <div class="section" itemscope itemtype="https://schema.org/Organization">
+        <p><span itemprop="name">KMIS Pro</span> propose différents services aux établissements en parfaite adéquation avec les problématiques rencontrées de nos jours aussi bien pour le corps professoral que pour les élèves.</p>
+    </div>
+
+    <div class="separator separator--point"></div>
+
+    <div class="section target-school">
+        <div class="target-school__image with-background" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="{{ asset('build/images/harassment-v.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
+        </div>
+        <div class="target-school__content">
+            <p><strong>Pour les professeurs, les approches sont les suivantes :</strong></p>
+            <ul class="list">
+                <li>Diagnostiquer les situations à risques : nous abordons les situations dangereuses liées aux phénomènes extérieurs à l’établissement, pour les reconnaître, les anticiper, les éviter ou les gérer en dernier recours.</li>
+                <li>Travailler la confiance en soi : vous apprendrez vos forces et vos faiblesses, les interactions entre le verbal, le non verbal et le paraverbal, ainsi que des exercices ou des mises en situation pour booster votre confiance en vous.</li>
+                <li>Traiter les situations conflictuelles : nous rentrons dans la gestion du conflit lié à l’environnement scolaire ; un élève difficile, un parent d’élève agressif, un collègue en difficulté, vous apprendrez les techniques et les leviers pour gérer ces situations compliquées.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section target-school">
+        <div class="target-school__image with-background" data-aos="zoom-in" data-aos-duration="1200">
+            <img src="{{ asset('build/images/harassment-v.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
+        </div>
+        <div class="target-school__content">
+            <p><strong>Pour les élèves, les axes sont les suivants :</strong></p>
+            <ul class="list">
+                <li>Lutter contre le harcèlement, : nous apprenons à le déceler, l’identifier, le comprendre, afin de proposer les solutions pour le traiter. Se construire ou se reconstruire physiquement et psychologiquement.</li>
+                <li>Apprendre les premiers mécanismes pour ne plus être victime : nous analyserons ce qui peut faire de quelqu’un la proie d’un autre, d’une bande, à l’école ou à l’extérieur, dans le cadre associatif ou tout autre environnement, déterminer les réponses qui peuvent y être apportées.</li>
+                <li>Réussir par le sport, ou comment se forger un mental à toute épreuve avec un corps solide. Nous aborderons les mécanismes psychiques, motivationnels ainsi que les passerelles avec le monde scolaire et la vie quotidienne.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="separator separator--point"></div>
+
+    <div class="section">
+        <p>Enfin, la relation ou et l’interaction Professeurs/Élèves :</p>
+        <p>Chacun a ses difficultés, son histoire, ses objectifs dans une classe. Nous mettons en place les conditions d’une réussite collective avec notre approche spécifique : Mieux se connaître, mieux se comprendre pour mieux se respecter.</p>
+    </div>
+
+    <div class="separator"></div>
+
+    <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Administrations recevant du public</span></h2>
+
+    <div class="section">
+        <p>KMIS Pro propose différents services aux administrations, et plus particulièrement aux personnes en relation directe avec un public, afin de donner les clés d’analyse et les réponses adaptées aux situations pouvant être rencontrées.</p>
+        <p>Nos services couvrent entre autres, le décryptage et la connaissance de la typologie de public, ses modes de pensées, ses attentes mais aussi l’analyse de sa communication et de ses intentions ; en effet 95% de la communication passe par du non verbal.Connaître, décoder et comprendre ces 95% vous donnera un avantage conséquent pour choisir les bons leviers de la désescalade.</p>
+        <p>Par exemple quelqu’un qui hurle n’emploiera pas forcément la violence, et il est primordial d’identifier les situations à risques avec des outils fiables. Nous abordons tous ces éléments ainsi que la gestion du stress induit par ce genre de situation.</p>
+    </div>
+
+    <div class="section target-public with-background with-overlay with-overlay--dark">
+        <img src="{{ asset('build/images/public-h.webp') }}" alt="" />
+        <div class="target-public__question">Quels sont mes risques ?</div>
+        <div class="target-public__question">Comment vont réagir les autres ?</div>
+        <div class="target-public__question">Sur qui puis-je compter ?</div>
+        <div class="target-public__question">Que faire exactement ?</div>
+        <div class="target-public__response">Autant de questions auxquelles nous proposons des réponses concrètes pour vous aider au quotidien.</div>
+    </div>
+
+    <div class="separator separator--point"></div>
+
+    <div class="section">
+        <p>KMIS Pro présente une palette complète de services aux entreprises ainsi qu’à leurs employés. Cela passe tout d’abord par des outils de gestion du stress, d’optimisation de l’organisation et de la planification du temps de travail ainsi que de la sensibilisation à la sécurité (trajet domicile-travail, accueil du public, …)<p>
+        <p>Ensuite pour le manager : comment augmenter sa confiance en soi ? Mieux gérer ses émotions ? Améliorer sa prise de parole en public ? Nous abordons tous les leviers pour créer les conditions de la réussite de l’équipe, pour passer de la collaboration à la coopération. Devenir un leader connu et reconnu.</p>
+        <p>Enfin pour l’entreprise et son comité de direction, nous proposons des activités de Teambuilding, l’identification de synergies et la création de valeur pour la réussite collective.</p>
+    </div>
+
+    <div class="separator"></div>
+
+{% endblock %}

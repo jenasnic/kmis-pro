@@ -44,20 +44,20 @@ form.quote.serviceNote: Précisez
 form.service.label: Libellé
 form.service.withNote: A préciser
 
-front.coaching.header.title: Coaching
 front.contact.header.title: Contact
 front.contact.page.contact_form_success: Votre demande de devis a bien été prise en compte.
 front.contact.page.title: Contactez-nous
 front.footer.link.cookie: Gestion des cookies
 front.footer.link.google: Référencement Google gratuit
 front.footer.link.privacy: Protection des données
-front.menu.item.coaching: Coaching
 front.menu.item.contact: Contact
-front.menu.item.services: Services
+front.menu.item.service: Nos moyens
+front.menu.item.target: Nos cibles
 front.quote.header.title: Devis
 front.quote.page.new_quote_success: Votre demande de devis a bien été prise en compte.
 front.quote.page.title: Demande de devis
 front.services.header.title: Services proposés
+front.target.header.title: Public visé
 
 login.password: Mot de passe
 login.title: Connexion

@@ -5,8 +5,9 @@
         </a>
     </div>
     <div class="menu">
-        <a href="{{ path('app_service') }}"><span>{{ 'front.menu.item.services'|trans }}</span></a>
-        <a href="{{ path('app_home') }}"><span>{{ 'front.menu.item.coaching'|trans }}</span></a>
+        {# pour qui ? comment ?, périmètre, secteur d'activité, domaine, prospect, public visé, public d'intérêt #}
+        <a href="{{ path('app_target') }}"><span>{{ 'front.menu.item.target'|trans }}</span></a>
+        <a href="{{ path('app_services') }}"><span>{{ 'front.menu.item.service'|trans }}</span></a>
         <a href="{{ path('app_contact') }}"><span>{{ 'front.menu.item.contact'|trans }}</span></a>
     </div>
     <div class="menu-burger"></div>

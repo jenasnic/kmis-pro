@@ -29,8 +29,8 @@ a {
 }
 
 p {
-  font-size: 1.3em;
-  line-height: 1.8em;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   margin-bottom: 20px;
 
   &.note {
@@ -47,8 +47,39 @@ h1, h2, h3 {
   font-family: fonts.$text-title-font;
 }
 
-ul, li {
-  list-style: none;
+ul {
+  > li {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    list-style: none;
+    padding: 5px 10px;
+
+    &:before {
+      @include icons.icon(icons.$icon-play);
+      color: color.$primary-color;
+      margin-right: 7px;
+    }
+
+    > ul {
+      padding: 10px 10px 10px 30px;
+
+      @include media.below(sm) {
+        padding: 10px;
+      }
+
+      > li {
+        list-style: none;
+        padding: 5px 0;
+
+        &:before {
+          @include icons.icon(icons.$icon-checkmark);
+          color: color.$primary-color;
+          font-size: 0.8em;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 
 @for $i from 1 through 5 {
@@ -131,5 +162,26 @@ h2 {
 }
 
 .separator {
+  height: $default-margin;
+
+  &--point {
+    height: 20px;
+    position: relative;
+
+    &:before {
+      background-color: color.$primary-color;
+      border-radius: 100%;
+      content: '';
+      height: 20px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-10px, -10px);
+      width: 20px;
+    }
+  }
+}
+
+.separator-point {
   height: $default-margin;
 }

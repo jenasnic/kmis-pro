@@ -14,8 +14,14 @@ class HomeController extends AbstractController
         return $this->render('front/home.html.twig');
     }
 
-    #[Route('/services-proposes', name: 'app_service')]
-    public function service(): Response
+    #[Route('/public-vise', name: 'app_target')]
+    public function target(): Response
+    {
+        return $this->render('front/target.html.twig');
+    }
+
+    #[Route('/services-proposes', name: 'app_services')]
+    public function services(): Response
     {
         return $this->render('front/services.html.twig');
     }
