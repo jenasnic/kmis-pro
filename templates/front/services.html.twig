@@ -17,6 +17,11 @@
 
 {% block body %}
 
+    {% include 'front/components/_floating-shortcut.html.twig' with {
+        link: path('app_quote'),
+        label: 'form.quote.shortcut'|trans,
+    } only %}
+
     <div class="separator"></div>
 
     <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Formations en présentiel</span></h2>
@@ -63,6 +68,6 @@
         <p>Ces séances peuvent se faire à l’unité ou en pack.</p>
     </div>
 
-    <div class="separator"></div>
+    <div class="separator separator--last"></div>
 
 {% endblock %}

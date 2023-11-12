@@ -18,7 +18,6 @@ final class ContactFactory extends ModelFactory
 
     private AsciiSlugger $slugger;
 
-
     public function __construct()
     {
         parent::__construct();

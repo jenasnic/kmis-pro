@@ -41,6 +41,7 @@ form.quote.organizationNote: Précisez
 form.quote.peopleCount: Nb. participants
 form.quote.service: Type de prestation
 form.quote.serviceNote: Précisez
+form.quote.shortcut: Demander un devis
 form.service.label: Libellé
 form.service.withNote: A préciser
 

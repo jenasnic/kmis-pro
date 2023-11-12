@@ -176,10 +176,6 @@ h2 {
 .separator {
   height: $default-margin;
 
-  @include media.below(sm) {
-    height: $mobile-margin;
-  }
-
   &--point {
     height: 20px;
     position: relative;
@@ -196,8 +192,14 @@ h2 {
       width: 20px;
     }
   }
-}
 
-.separator-point {
-  height: $default-margin;
+  @include media.below(sm) {
+    height: $mobile-margin;
+  }
+
+  @include media.below(md) {
+    &--last {
+      height: 100px;
+    }
+  }
 }

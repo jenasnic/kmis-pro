@@ -19,6 +19,11 @@
 
 {% block body %}
 
+    {% include 'front/components/_floating-shortcut.html.twig' with {
+        link: path('app_quote'),
+        label: 'form.quote.shortcut'|trans,
+    } only %}
+
     <div class="separator"></div>
 
     <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Établissements scolaires</span></h2>
@@ -91,6 +96,6 @@
         <p>Enfin pour l’entreprise et son comité de direction, nous proposons des activités de Teambuilding, l’identification de synergies et la création de valeur pour la réussite collective.</p>
     </div>
 
-    <div class="separator"></div>
+    <div class="separator separator--last"></div>
 
 {% endblock %}

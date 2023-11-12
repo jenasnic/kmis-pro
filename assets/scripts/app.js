@@ -8,6 +8,7 @@ import './common/cookie';
 import './common/form';
 import './common/captcha';
 import './common/components/flash';
+import './common/components/floating-shortcut';
 
 import AOS from 'aos';
 AOS.init({
