@@ -40,16 +40,16 @@
         height: 1px;
         background-color: color.$primary-color;
         top: 50%;
-        width: 100%;
+        width: 50vw;
         position: absolute;
       }
 
       &:before {
-        left: -110%;
+        left: -55vw;
       }
 
       &:after {
-        right: -110%;
+        right: -55vw;
       }
 
       @include media.below(md) {
@@ -69,24 +69,12 @@
       padding-top: 70px;
       width: 100%;
 
-      @include media.above(md) {
-        margin-left: -50px;
-      }
-
-      @include media.below(sm) {
-        flex-direction: column;
-      }
-
       > .logo-image {
         height: 40vh;
         max-width: 50vw;
 
         @include media.below(md) {
-          max-width: 30vw;
-        }
-
-        @include media.below(sm) {
-          max-width: 40vw;
+          max-width: 70vw;
         }
       }
 
@@ -95,11 +83,7 @@
         max-width: 50vw;
 
         @include media.below(md) {
-          max-width: 30vw;
-        }
-
-        @include media.below(sm) {
-          max-width: 40vw;
+          max-width: 70vw;
         }
       }
     }

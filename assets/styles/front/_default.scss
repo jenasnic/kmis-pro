@@ -4,6 +4,7 @@
 @use './icons';
 
 $default-margin: 50px;
+$mobile-margin: 30px;
 
 body {
   background-color: color.$background-default-color;
@@ -126,6 +127,12 @@ h2 {
     padding: 0 100px;
     position: relative;
 
+    @include media.below(md) {
+      display: block;
+      padding: 10px 20px;
+      position: initial;
+    }
+
     &:before, &:after {
       border-left: 5px double color.$primary-color;
       border-top: 5px double color.$primary-color;
@@ -146,6 +153,11 @@ h2 {
       transform: rotate(180deg);
     }
   }
+
+  @include media.below(md) {
+    font-size: 2.8rem;
+    margin: 40px $mobile-margin 70px $mobile-margin;
+  }
 }
 
 .section {
@@ -157,12 +169,16 @@ h2 {
   }
 
   @include media.below(sm) {
-    padding: 0 30px;
+    padding: 0 $mobile-margin;
   }
 }
 
 .separator {
   height: $default-margin;
+
+  @include media.below(sm) {
+    height: $mobile-margin;
+  }
 
   &--point {
     height: 20px;

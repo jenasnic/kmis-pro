@@ -1,14 +1,16 @@
 <nav id="menu-wrapper">
-    <div class="menu-logo">
-        <a href="{{ path('app_home') }}">
-            <img src="{{ asset('build/images/logo_title.svg') }}" alt="KMIS Pro"/>
-        </a>
-    </div>
     <div class="menu">
-        {# pour qui ? comment ?, périmètre, secteur d'activité, domaine, prospect, public visé, public d'intérêt #}
-        <a href="{{ path('app_target') }}"><span>{{ 'front.menu.item.target'|trans }}</span></a>
-        <a href="{{ path('app_services') }}"><span>{{ 'front.menu.item.service'|trans }}</span></a>
-        <a href="{{ path('app_contact') }}"><span>{{ 'front.menu.item.contact'|trans }}</span></a>
+        <div class="menu__logo">
+            <a href="{{ path('app_home') }}">
+                <img src="{{ asset('build/images/logo_title.svg') }}" alt="KMIS Pro"/>
+            </a>
+        </div>
+        <div class="menu__items">
+            <a href="{{ path('app_target') }}"><span>{{ 'front.menu.item.target'|trans }}</span></a>
+            <a href="{{ path('app_services') }}"><span>{{ 'front.menu.item.service'|trans }}</span></a>
+            <a href="{{ path('app_quote') }}"><span>{{ 'front.menu.item.quote'|trans }}</span></a>
+            <a href="{{ path('app_contact') }}"><span>{{ 'front.menu.item.contact'|trans }}</span></a>
+        </div>
     </div>
     <div class="menu-burger"></div>
 </nav>

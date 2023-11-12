@@ -35,25 +35,38 @@
     justify-content: center;
 
     .quote-text {
-      position: relative;
-      font-size: 2.3em;
       font-family: 'Yellowtail', cursive;
+      font-size: 2.3em;
+      padding: 0 80px;
+      position: relative;
+      text-align: center;
 
       &:before, &:after {
         position: absolute;
         color: color.$primary-color;
         font-size: 1.7em;
-        top: -30px;
+        top: -20px;
       }
 
       &:before {
         @include icons.icon(icons.$icon-quotes-left);
-        left: -80px;
+        font-size: 1.2em;
+        left: 20px;
       }
 
       &:after {
         @include icons.icon(icons.$icon-quotes-right);
-        right: -80px;
+        font-size: 1.2em;
+        right: 20px;
+      }
+
+      @include media.below(sm) {
+        font-size: 1.8em;
+        padding: 0 65px;
+
+        &:before, &:after {
+          font-size: 1.2em;
+        }
       }
     }
   }
@@ -63,6 +76,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    font-size: 1em;
     gap: 50px;
     height: 70vh;
     justify-content: center;
@@ -117,6 +131,7 @@
 
     .target-info {
       height: 40px;
+      max-width: 95vw;
       position: relative;
       width: 710px;
       z-index: 5;
@@ -146,6 +161,10 @@
       margin-top: 50px;
       z-index: 5;
     }
+
+    @include media.below(sm) {
+      font-size: 0.8em;
+    }
   }
 
   .service-wrapper {
@@ -155,18 +174,22 @@
     justify-content: space-between;
     margin: 0 auto 180px auto;
     max-width: 1600px;
-    width: 100vw;
+    width: 90vw;
 
     .service {
       display: flex;
       flex-direction: column;
       height: 60vh;
       justify-content: flex-end;
+      max-height: 650px;
+      min-height: 500px;
       transition: all 0.6s ease-out;
       width: 30%;
 
       &--down {
-        transform: translateY(50px);
+        @include media.above(md) {
+          transform: translateY(50px);
+        }
       }
 
       img {
@@ -175,6 +198,7 @@
 
       .button-wrapper{
         background-color: color.$primary-color;
+        box-sizing: border-box;
         display: flex;
         justify-content: center;
         padding: 10px 10px;
@@ -195,16 +219,38 @@
             right: 0;
             top: 0;
           }
+
+          @include media.below(md) {
+            font-size: 1.3em;
+          }
         }
       }
 
       &:hover {
         box-shadow: 0 0 7px 1px color.$background-dark-color;
-
-        .button-text {
-          font-size: 2.1em;
-        }
       }
+
+      @include media.below(md) {
+        width: 45%;
+      }
+
+      @include media.below(sm) {
+        width: 90%;
+      }
+    }
+
+    @include media.below(md) {
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      margin: 0 auto 100px auto;
+    }
+
+    @include media.below(sm) {
+      flex-direction: column;
+      gap: 50px;
+      margin: 0 auto 50px auto;
+      width: 90vw;
     }
   }
 }

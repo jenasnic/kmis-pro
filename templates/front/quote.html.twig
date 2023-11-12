@@ -8,13 +8,20 @@
     <meta name="og:title" property="og:title" content="Devis">
 {% endblock %}
 
-{% block header %}{% endblock %}
+{% block header %}
+    {% include 'front/components/_banner.html.twig' with {
+        'image': asset('build/images/todo.webp'),
+        'title': ('front.quote.page.title'|trans),
+    } only %}
+{% endblock %}
 
 {% block body %}
 
-    <div class="section">
+    <div class="separator"></div>
 
-        <h2 data-aos="zoom-out" data-aos-duration="2000">{{ 'front.quote.page.title'|trans }}</h2>
+    <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Demande de devis</span></h2>
+
+    <div class="section">
 
         {{ form_start(form, {'attr': {'class': 'quote-form'}}) }}
 

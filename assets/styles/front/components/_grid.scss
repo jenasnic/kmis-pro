@@ -7,13 +7,6 @@ $gap: 5px;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  &.col-x1, &.col-md-1, &.col-sm-1 {
-    > * {
-      min-width: 100%;
-      width: 100%;
-    }
-  }
-
   @for $i from 2 through 6 {
     &.col-x#{$i} {
       > * {
@@ -42,6 +35,13 @@ $gap: 5px;
           width: calc((100% / #{$i}) - (#{$gap} * #{$i}));
         }
       }
+    }
+  }
+
+  &.col-x1, &.col-md-x1, &.col-sm-x1 {
+    > * {
+      min-width: 100%;
+      width: 100%;
     }
   }
 }

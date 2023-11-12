@@ -1,6 +1,6 @@
 {% extends 'layout/_front.html.twig' %}
 
-{% block title %}{{ 'front.target.header.title'|trans }}{% endblock %}
+{% block title %}{{ 'front.target.page.title'|trans }}{% endblock %}
 
 {% block meta %}
     <meta name="keywords" content="KMIS Pro, self-defense, sécurité, formation, Oise, Verneuil-en-Halatte" />
@@ -13,7 +13,7 @@
 {% block header %}
     {% include 'front/components/_banner.html.twig' with {
         'image': asset('build/images/todo.webp'),
-        'title': ('front.target.header.title'|trans),
+        'title': ('front.target.page.title'|trans),
     } only %}
 {% endblock %}
 
