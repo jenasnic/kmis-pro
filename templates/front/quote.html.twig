@@ -64,8 +64,10 @@
 
         <div class="fieldset fieldset--with-title contact-wrapper">
             <div class="fieldset__title">{{ 'form.quote.contact'|trans }}</div>
-            <div class="row col-x3 col-md-x2 col-sm-x1">
+            <div class="row col-x1">
                 {{ form_row(form.contact.gender) }}
+            </div>
+            <div class="row col-x2 col-sm-x1">
                 {{ form_row(form.contact.firstName) }}
                 {{ form_row(form.contact.lastName) }}
             </div>

@@ -7,6 +7,13 @@ $gap: 5px;
   flex-wrap: wrap;
   justify-content: space-between;
 
+  &.col-x1 {
+    > * {
+      min-width: 100%;
+      width: 100%;
+    }
+  }
+
   @for $i from 2 through 6 {
     &.col-x#{$i} {
       > * {
@@ -17,6 +24,13 @@ $gap: 5px;
   }
 
   @include media.below(md) {
+    &.col-md-x1 {
+      > * {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+
     @for $i from 2 through 6 {
       &.col-md-x#{$i} {
         > * {
@@ -28,6 +42,13 @@ $gap: 5px;
   }
 
   @include media.below(sm) {
+    &.col-sm-x1 {
+      > * {
+        min-width: 100%;
+        width: 100%;
+      }
+    }
+
     @for $i from 2 through 6 {
       &.col-sm-x#{$i} {
         > * {
@@ -35,13 +56,6 @@ $gap: 5px;
           width: calc((100% / #{$i}) - (#{$gap} * #{$i}));
         }
       }
-    }
-  }
-
-  &.col-x1, &.col-md-x1, &.col-sm-x1 {
-    > * {
-      min-width: 100%;
-      width: 100%;
     }
   }
 }
