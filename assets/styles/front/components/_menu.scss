@@ -82,7 +82,7 @@
         }
 
         @include media.below(sm) {
-          font-size: 1.2em;
+          font-size: 0.9em;
           padding: 10px;
 
           > span {
@@ -94,7 +94,7 @@
 
       @include media.below(sm) {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         width: 100%;
       }
     }

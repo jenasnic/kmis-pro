@@ -21,8 +21,8 @@ class LocalizationController extends AbstractController
     public function localization(Request $request, string $search): Response
     {
         if (
-            !$request->headers->has('authorization')
-            || $request->headers->get('authorization') !== $this->localizationKey
+            !$request->headers->has('LocalizationToken')
+            || $request->headers->get('LocalizationToken') !== $this->localizationKey
         ) {
             throw $this->createAccessDeniedException();
         }

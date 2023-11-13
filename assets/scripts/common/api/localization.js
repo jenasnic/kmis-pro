@@ -21,7 +21,7 @@ class LocalizationClient {
       baseURL,
       timeout: 5000,
       headers: {
-        'authorization': `${localizationKey}`,
+        'LocalizationToken': `${localizationKey}`,
       },
     });
   }
