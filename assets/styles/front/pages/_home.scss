@@ -1,4 +1,5 @@
 @use '../color';
+@use '../fonts';
 @use '../icons';
 @use '../media';
 
@@ -35,7 +36,7 @@
     justify-content: center;
 
     .quote-text {
-      font-family: 'Yellowtail', cursive;
+      font-family: fonts.$text-quote-font;
       font-size: 2.3em;
       padding: 0 80px;
       position: relative;

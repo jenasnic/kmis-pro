@@ -1,5 +1,5 @@
 // >>> For help tool only
-import './help-tool';
+// import './help-tool';
 // <<< For help tool only
 
 import '../styles/app.scss';

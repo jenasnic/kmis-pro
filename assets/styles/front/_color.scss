@@ -16,11 +16,12 @@ $background-default-color: $white;
 $background-light-color: $gallery;
 $background-dark-color: $mine-shaft;
 
-//$primary-color: $geebung;
+$primary-color: $geebung;
+$theme-color: $scorpion;
 
 // >>> For help tool only
-$primary-color: var(--primary-color);
-$theme-color: var(--theme-color);
+//$primary-color: var(--primary-color);
+//$theme-color: var(--theme-color);
 // <<< For help tool only
 
 //TEXT

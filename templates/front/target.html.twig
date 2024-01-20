@@ -12,7 +12,7 @@
 
 {% block header %}
     {% include 'front/components/_banner.html.twig' with {
-        'image': asset('build/images/todo.webp'),
+        'image': asset('build/images/target-banner.webp'),
         'title': ('front.target.page.title'|trans),
     } only %}
 {% endblock %}
@@ -29,14 +29,14 @@
     <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Établissements scolaires</span></h2>
 
     <div class="section" itemscope itemtype="https://schema.org/Organization">
-        <p><span itemprop="name">KMIS Pro</span> propose différents services aux établissements en parfaite adéquation avec les problématiques rencontrées de nos jours aussi bien pour le corps professoral que pour les élèves.</p>
+        <p><span itemprop="name">KMIS Pro</span> propose différents services aux établissements, en parfaite adéquation avec les problématiques rencontrées de nos jours aussi bien pour le corps professoral que pour les élèves.</p>
     </div>
 
     <div class="separator separator--point"></div>
 
     <div class="section target-school">
         <div class="target-school__image with-background" data-aos="zoom-in" data-aos-duration="1200">
-            <img src="{{ asset('build/images/harassment-v.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
+            <img src="{{ asset('build/images/target-teacher.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
         </div>
         <div class="target-school__content">
             <p><strong>Pour les professeurs, les approches sont les suivantes :</strong></p>
@@ -50,7 +50,7 @@
 
     <div class="section target-school">
         <div class="target-school__image with-background" data-aos="zoom-in" data-aos-duration="1200">
-            <img src="{{ asset('build/images/harassment-v.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
+            <img src="{{ asset('build/images/target-student.webp') }}" alt="{{ 'front.home.target.kmDefense.title'|trans }}"/>
         </div>
         <div class="target-school__content">
             <p><strong>Pour les élèves, les axes sont les suivants :</strong></p>
@@ -80,7 +80,7 @@
     </div>
 
     <div class="section target-public with-background with-overlay with-overlay--dark">
-        <img src="{{ asset('build/images/public-h.webp') }}" alt="" />
+        <img src="{{ asset('build/images/target-public.webp') }}" alt="" />
         <div class="target-public__question">Quels sont mes risques ?</div>
         <div class="target-public__question">Comment vont réagir les autres ?</div>
         <div class="target-public__question">Sur qui puis-je compter ?</div>
@@ -88,7 +88,9 @@
         <div class="target-public__response">Autant de questions auxquelles nous proposons des réponses concrètes pour vous aider au quotidien.</div>
     </div>
 
-    <div class="separator separator--point"></div>
+    <div class="separator"></div>
+
+    <h2 data-aos="zoom-out" data-aos-duration="1000"><span class="title-decoration">Services aux entreprises</span></h2>
 
     <div class="section">
         <p>KMIS Pro présente une palette complète de services aux entreprises ainsi qu’à leurs employés. Cela passe tout d’abord par des outils de gestion du stress, d’optimisation de l’organisation et de la planification du temps de travail ainsi que de la sensibilisation à la sécurité (trajet domicile-travail, accueil du public, …)<p>

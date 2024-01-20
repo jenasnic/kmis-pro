@@ -60,6 +60,10 @@
     max-height: 500px;
     min-height: 500px;
 
+    > img {
+      filter: grayscale(100%);
+    }
+
     &__question {
       color: color.$white;
       font-weight: 700;

@@ -53,13 +53,13 @@ front.footer.link.google: Référencement Google gratuit
 front.footer.link.privacy: Protection des données
 front.menu.item.contact: Contact
 front.menu.item.quote: Devis
-front.menu.item.service: Nos moyens
-front.menu.item.target: Nos cibles
+front.menu.item.service: Nos prestations
+front.menu.item.target: Nos services
 front.quote.header.title: Devis
 front.quote.page.new_quote_success: Votre demande de devis a bien été prise en compte.
 front.quote.page.title: Devis
-front.services.page.title: Services proposés
-front.target.page.title: Public visé
+front.services.page.title: Nos prestations
+front.target.page.title: Nos services
 
 login.password: Mot de passe
 login.title: Connexion

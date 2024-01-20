@@ -1,5 +1,7 @@
 import 'tarteaucitronjs/css/tarteaucitron.css';
 
+import '../../styles/front/components/_tarteaucitron.scss';
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const cookiePreferenceSelectors = [...document.querySelectorAll('.manage-cookies')];
