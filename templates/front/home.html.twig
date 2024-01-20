@@ -42,22 +42,22 @@
             <div class="target-detail" data-target-detail="1">Ayez toutes les clés pour gérer les situations difficiles</div>
             <div class="target-detail" data-target-detail="2">Boostez le potentiel individuel et collectif</div>
         </div>
-        <a href="#" class="link-icon-button">En savoir plus</a>
+        <a href="{{ path('app_target') }}" class="link-icon-button">En savoir plus</a>
     </div>
 
     <div class="separator"></div>
 
     <h2 data-aos="zoom-out"><span class="title-decoration">Nos prestations</span></h2>
     <div id="service-type" class="service-wrapper">
-        <a href="#" class="service with-background with-overlay">
+        <a href="{{ path('app_services') }}#service-training" class="service with-background with-overlay">
             <img src="{{ asset('build/images/home-service-training.webp') }}" alt="Formations en présentiel" />
             <span class="button-wrapper"><span class="button-text">Formations en présentiel</span></span>
         </a>
-        <a href="#" class="service service--down with-background with-overlay">
+        <a href="{{ path('app_services') }}#service-work-group" class="service service--down with-background with-overlay">
             <img src="{{ asset('build/images/home-service-work-group.webp') }}" alt="Ateliers" />
             <span class="button-wrapper"><span class="button-text">Ateliers</span></span>
         </a>
-        <a href="#" class="service with-background with-overlay">
+        <a href="{{ path('app_services') }}#service-coaching" class="service with-background with-overlay">
             <img src="{{ asset('build/images/home-service-coaching.webp') }}" alt="Cours et coaching privés" />
             <span class="button-wrapper"><span class="button-text">Cours et coaching privés</span></span>
         </a>
