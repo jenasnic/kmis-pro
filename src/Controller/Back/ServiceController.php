@@ -25,7 +25,7 @@ class ServiceController extends AbstractController
     ) {
     }
 
-    #[Route('/type-organisation/liste', name: 'bo_service_list', methods: ['GET', 'POST'])]
+    #[Route('/type-service/liste', name: 'bo_service_list', methods: ['GET', 'POST'])]
     public function list(Request $request): Response
     {
         $serviceList = $this->serviceRepository->findOrdered();
@@ -55,7 +55,7 @@ class ServiceController extends AbstractController
          ]);
     }
 
-    #[Route('/type-organisation/nouvelle-actualite', name: 'bo_service_new', methods: ['GET', 'POST'])]
+    #[Route('/type-service/nouveau-service', name: 'bo_service_new', methods: ['GET', 'POST'])]
     public function add(Request $request, SaveServiceHandler $saveServiceHandler): Response
     {
         $service = new Service();
@@ -65,7 +65,7 @@ class ServiceController extends AbstractController
         return $this->edit($request, $saveServiceHandler, $service);
     }
 
-    #[Route('/type-organisation/modifier/{service}', name: 'bo_service_edit', methods: ['GET', 'POST'])]
+    #[Route('/type-service/modifier/{service}', name: 'bo_service_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, SaveServiceHandler $saveServiceHandler, Service $service): Response
     {
         $form = $this->createForm(ServiceType::class, $service);
@@ -85,7 +85,7 @@ class ServiceController extends AbstractController
          ]);
     }
 
-    #[Route('/type-organisation/supprimer/{service}', name: 'bo_service_delete', methods: ['POST'])]
+    #[Route('/type-service/supprimer/{service}', name: 'bo_service_delete', methods: ['POST'])]
     public function delete(Request $request, Service $service): Response
     {
         if ($this->isCsrfTokenValid('delete-'.$service->getId(), (string) $request->request->get('_token'))) {
